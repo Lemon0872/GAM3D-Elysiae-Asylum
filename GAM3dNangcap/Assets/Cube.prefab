@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7585215780552713822}
   - component: {fileID: 1392763879422236424}
   - component: {fileID: 5274865390130783153}
-  - component: {fileID: 3082036191969008153}
+  - component: {fileID: 5605627587178242156}
   - component: {fileID: 2213664378649430966}
   - component: {fileID: -9069572552237688827}
   m_Layer: 0
@@ -114,7 +114,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3082036191969008153
+--- !u!114 &5605627587178242156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,11 +123,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5242224383823310593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a51a07110bdf15408cec8ca4419aa4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
-  outlineColor: {r: 0.8037735, g: 0.14407252, b: 0.14407252, a: 1}
+  outlineColor: {r: 0.7735849, g: 0.17369162, b: 0.17369162, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::cubeconfig
   isLunk: 0
   lunkMaterial: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
-  nonLunkMaterial: {fileID: 2100000, guid: 91199d8472a65784e8bbea35876ebe94, type: 2}
+  nonLunkMaterial: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
 --- !u!114 &-9069572552237688827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d3457c84e7fdc488c15a2d09ff1d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  isGlowing: 0
+  isGlowing: 1
   emissionIntensity: 20
-  emissionColor: {r: 0.7490196, g: 0.7137255, b: 0.050980393, a: 1}
+  emissionColor: {r: 1, g: 0.953922, b: 0.088679194, a: 1}

@@ -44,7 +44,6 @@ public class HexanexusController : MonoBehaviour
     void HandleAxisSelection()
     {
         if (isRotating) return;
-
         if (Input.GetKeyDown(KeyCode.Alpha1)) SelectAxis(0); // X+
         if (Input.GetKeyDown(KeyCode.Alpha2)) SelectAxis(1); // X-
         if (Input.GetKeyDown(KeyCode.Alpha3)) SelectAxis(2); // Y+

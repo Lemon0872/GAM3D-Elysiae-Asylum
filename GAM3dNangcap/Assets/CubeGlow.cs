@@ -6,13 +6,13 @@ public class CubeGlow : MonoBehaviour
     public float emissionIntensity = 3f; // đúng bằng intensity HDR trong material gốc
     public Color emissionColor = Color.white; // hoặc màu gốc
 
-    private Renderer rend;
-    private Material mat;
+    public Renderer rend;
+    public Material mat;
 
     void Awake()
     {
         rend = GetComponent<Renderer>();
-        mat = Instantiate(rend.sharedMaterial); // clone giữ nguyên shader
+        mat = rend.material; // clone giữ nguyên shader
         rend.material = mat;
     }
     void Update()
