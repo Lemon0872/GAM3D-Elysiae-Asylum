@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] private Transform _cameraTransform;
-    [SerializeField] private Animator animator;
+    private Animator animator;
 
     private CharacterController _controller;
     private Vector2 _moveInput;
