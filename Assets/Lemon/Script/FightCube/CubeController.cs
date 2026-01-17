@@ -15,6 +15,12 @@ public class CubeController : MonoBehaviour
     Vector2Int previousGridPos;
 
     Dictionary<Vector2Int, Tile> tileMap = new();
+    Vector2Int? lastGridPos;   // tile trước đó (nullable)
+    bool isTeleporting;
+
+    Coroutine moveRoutine;
+    Coroutine returnRoutine;
+
 
     private void Start()
     {
@@ -23,6 +29,8 @@ public class CubeController : MonoBehaviour
 
         foreach (Tile t in FindObjectsOfType<Tile>())
             tileMap[t.gridPos] = t;
+
+        lastGridPos = null;
     }
 
     public void TryPush(Transform player)
@@ -42,7 +50,62 @@ public class CubeController : MonoBehaviour
         if (!target.HasValue) return;
 
         previousGridPos = gridPos;
-        StartCoroutine(MoveTo(target.Value));
+        moveRoutine = StartCoroutine(MoveTo(target.Value));
+    }
+
+    void TryTeleport(TeleportTile teleport)
+    {
+        Debug.Log("try tele");
+        if (isTeleporting)
+        {
+            state = CubeState.Idle;
+            return;
+        }
+
+        if (teleport == null || teleport.pairedTile == null)
+        {
+            Debug.LogWarning("Teleport tile missing pair");
+            state = CubeState.Idle;
+            return;
+        }
+
+        // Phải đi từ tile khác sang teleport
+        if (!lastGridPos.HasValue || lastGridPos.Value == gridPos)
+        {
+            state = CubeState.Idle;
+            return;
+        }
+
+        // Không cho teleport từ teleport → teleport
+        if (tileMap.TryGetValue(lastGridPos.Value, out Tile prevTile) &&
+            prevTile is TeleportTile)
+        {
+            state = CubeState.Idle;
+            return;
+        }
+        StopMovementCoroutines();
+        StartCoroutine(TeleportTo(teleport.pairedTile));
+        Debug.Log($"Teleport from {gridPos} to {teleport.pairedTile.gridPos}");
+
+    }
+
+    IEnumerator TeleportTo(TeleportTile target)
+    {
+        Debug.Log("dang tele");
+
+        isTeleporting = true;
+        state = CubeState.Moving;
+
+        yield return new WaitForSeconds(0.1f); // có thể bỏ nếu không cần FX
+
+        lastGridPos = target.gridPos;
+        gridPos = target.gridPos;
+
+        transform.position = GridUtility.GridToWorld(gridPos, cubeY);
+
+        isTeleporting = false;
+        state = CubeState.Idle;
+        Debug.Log("Teleport to " + target.gridPos);
     }
 
     Vector2Int? FindNextSupportedTile(Vector2Int start, Vector2Int dir)
@@ -81,7 +144,7 @@ public class CubeController : MonoBehaviour
             transform.position = Vector3.Lerp(start, end, t);
             yield return null;
         }
-
+        lastGridPos = gridPos;
         gridPos = target;
         CheckTile();
     }
@@ -108,6 +171,24 @@ public class CubeController : MonoBehaviour
                 state = CubeState.Win;
                 Debug.Log("WIN!");
                 break;
+            case TileType.Teleport:
+                TryTeleport(tile as TeleportTile);
+            break;
+        }
+    }
+
+    void StopMovementCoroutines()
+    {
+        if (moveRoutine != null)
+        {
+            StopCoroutine(moveRoutine);
+            moveRoutine = null;
+        }
+
+        if (returnRoutine != null)
+        {
+            StopCoroutine(returnRoutine);
+            returnRoutine = null;
         }
     }
 
@@ -115,6 +196,6 @@ public class CubeController : MonoBehaviour
     {
         state = CubeState.Returning;
         yield return new WaitForSeconds(0.2f);
-        StartCoroutine(MoveTo(previousGridPos));
+        returnRoutine = StartCoroutine(MoveTo(previousGridPos));
     }
 }
