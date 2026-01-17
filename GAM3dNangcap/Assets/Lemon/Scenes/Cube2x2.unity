@@ -846,10 +846,10 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -901,7 +901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Lunk
+      value: Non-Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1777,7 +1777,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1715249732}
   - component: {fileID: 1715249731}
-  - component: {fileID: 1715249733}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -1817,28 +1816,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1715249733
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715249730}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29b142cae457c9346b71a61f3d37c4c7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1985869865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1936,7 +1913,11 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -1984,6 +1965,10 @@ PrefabInstance:
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Name
       value: Cube (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: m_TagString
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -2133,6 +2118,14 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 1715249731}
+    - target: {fileID: 8886713347742541103, guid: 5bfbae8fd6a3e46468db771d16deb606, type: 3}
+      propertyPath: lensStart
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8886713347742541103, guid: 5bfbae8fd6a3e46468db771d16deb606, type: 3}
+      propertyPath: vignetteStart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

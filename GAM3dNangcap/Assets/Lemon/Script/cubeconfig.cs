@@ -9,22 +9,12 @@ public class cubeconfig : MonoBehaviour
     public Material nonLunkMaterial; // Material trong suốt
 
     private Renderer cubeRenderer;
-
-    void OnValidate()
-    {
-        
-    }
-    void Start()
+    void Awake()
     {
         ApplyConfiguration();
     }
-    public void ApplyConfiguration()
+    void OnValidate()
     {
-        if (cubeRenderer == null)
-            cubeRenderer = GetComponent<Renderer>();
-
-        if (cubeRenderer == null) return;
-
         // ✅ Cập nhật tag, material, và symbol
         if (isLunk)
         {
@@ -36,5 +26,18 @@ public class cubeconfig : MonoBehaviour
             cubeRenderer.sharedMaterial = nonLunkMaterial;
             gameObject.tag = "Non-Lunk";
         }
+    }
+    void Start()
+    {
+        
+    }
+    public void ApplyConfiguration()
+    {
+        if (cubeRenderer == null)
+            cubeRenderer = GetComponent<Renderer>();
+
+        if (cubeRenderer == null) return;
+
+        
     }
 }
