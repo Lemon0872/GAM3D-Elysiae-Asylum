@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Target Word Settings")]
     public string targetWord = "UNITY";   // từ khóa cần ghép
-    private List<char> collectedLetters = new List<char>();
+    public List<char> collectedLetters = new List<char>();
 
     [Header("Score Settings")]
     public int score = 0;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         if (complete)
         {
-            Debug.Log("Word complete! Level passed!");
+            Debug.Log("🔔🔔Word complete! Level passed!🔔🔔");
             LevelComplete();
         }
     }

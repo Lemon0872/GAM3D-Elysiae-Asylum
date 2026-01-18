@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Hammer",
+    "maps": [
+        {
+            "name": "HammerControl",
+            "id": "a3d97eae-a3b3-4425-a6fd-2ea310a4881a",
+            "actions": [
+                {
+                    "name": "Wack",
+                    "type": "Button",
+                    "id": "540e00ba-4cea-4d65-b5ff-f2a3688e36f5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "20212ac4-1a2e-4964-8a61-0258cbc264f9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Wack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
