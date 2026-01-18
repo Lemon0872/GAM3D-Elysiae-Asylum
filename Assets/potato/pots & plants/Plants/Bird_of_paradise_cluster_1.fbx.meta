@@ -3,7 +3,12 @@ guid: 3124502e0eff73448aa2c1e50a315c69
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paradise
+    second: {fileID: 2100000, guid: 3095aaf2e4d79884c914d8943177e6ac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
