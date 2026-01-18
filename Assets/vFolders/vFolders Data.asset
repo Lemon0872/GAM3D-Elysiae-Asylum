@@ -18,6 +18,7 @@ MonoBehaviour:
     - 0f004be2b13c1da40bb73491d7b2fc25
     - c5099f14c1d9d284093a9919b15d58eb
     - 3f9736f9457d4264ca617c1853631d6b
+    - 46f1fd3068d1d5d418e18dca61244d67
     values:
     - iconNameOrGuid: cs Script Icon
       colorIndex: 0
@@ -33,6 +34,10 @@ MonoBehaviour:
       isColorRecursive: 0
     - iconNameOrGuid: 
       colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 4
       isIconRecursive: 0
       isColorRecursive: 0
   bookmarks: []

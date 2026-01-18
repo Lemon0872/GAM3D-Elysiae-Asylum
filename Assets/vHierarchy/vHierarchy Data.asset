@@ -54,6 +54,7 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-2097988037-0
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1926701882-0
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-2048459511-0
+        - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1890580006-0
         values:
         - colorIndex: 0
           iconNameOrGuid: Camera Icon
@@ -121,6 +122,10 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 0
           iconNameOrGuid: CapsuleCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: StandaloneInputModule Icon
           isIconRecursive: 0
           isColorRecursive: 0
   bookmarks: []
