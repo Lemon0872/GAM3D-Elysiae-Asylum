@@ -69,4 +69,17 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("IsMoving", _moveInput.sqrMagnitude > 0.01f);
     }
+
+    [Header("Footstep")]
+    public AudioSource audioSource;
+    public AudioClip[] footstepClips;
+
+    public void PlayFootstep()
+    {
+        if (audioSource == null || footstepClips.Length == 0)
+            return;
+
+        AudioClip clip = footstepClips[Random.Range(0, footstepClips.Length)];
+        audioSource.PlayOneShot(clip);
+    }
 }
