@@ -21,6 +21,15 @@ public class CubeController : MonoBehaviour
     Coroutine moveRoutine;
     Coroutine returnRoutine;
 
+    [Header("Emission")]
+    public Color emissionColor = Color.cyan;
+    public float emissionIntensityMoving = 3.5f;
+    public float emissionIntensityIdle = 0f;
+    public float emissionLerpSpeed = 6f;
+
+    public Renderer cubeRenderer;
+    MaterialPropertyBlock mpb;
+    Coroutine emissionRoutine;
 
     private void Start()
     {
@@ -31,6 +40,50 @@ public class CubeController : MonoBehaviour
             tileMap[t.gridPos] = t;
 
         lastGridPos = null;
+        cubeRenderer = GetComponent<Renderer>();
+        mpb = new MaterialPropertyBlock();
+    }
+
+    void SetEmission(float intensity)
+    {
+        cubeRenderer.GetPropertyBlock(mpb, 0);
+        mpb.SetColor("_EmissionColor", emissionColor * intensity);
+        cubeRenderer.SetPropertyBlock(mpb, 0);
+    }
+
+    IEnumerator LerpEmission(float from, float to)
+    {
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * emissionLerpSpeed;
+            float intensity = Mathf.Lerp(from, to, t);
+            SetEmission(intensity);
+            yield return null;
+        }
+
+        SetEmission(to);
+    }
+
+    void StartEmission()
+    {
+        if (emissionRoutine != null)
+            StopCoroutine(emissionRoutine);
+
+        emissionRoutine = StartCoroutine(
+            LerpEmission(emissionIntensityIdle, emissionIntensityMoving)
+        );
+    }
+
+    void StopEmission()
+    {
+        if (emissionRoutine != null)
+            StopCoroutine(emissionRoutine);
+
+        emissionRoutine = StartCoroutine(
+            LerpEmission(emissionIntensityMoving, emissionIntensityIdle)
+        );
     }
 
     public void TryPush(Transform player)
@@ -133,7 +186,7 @@ public class CubeController : MonoBehaviour
     IEnumerator MoveTo(Vector2Int target)
     {
         state = CubeState.Moving;
-
+        StartEmission();
         Vector3 start = transform.position;
         Vector3 end = GridUtility.GridToWorld(target, cubeY);
 
@@ -147,6 +200,7 @@ public class CubeController : MonoBehaviour
         lastGridPos = gridPos;
         gridPos = target;
         CheckTile();
+        StopEmission();
     }
 
     void CheckTile()
@@ -156,7 +210,6 @@ public class CubeController : MonoBehaviour
             state = CubeState.Idle;
             return;
         }
-
         switch (tile.type)
         {
             case TileType.Support:
