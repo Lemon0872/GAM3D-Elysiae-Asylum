@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HexanexusController : MonoBehaviour
 {
@@ -14,9 +15,12 @@ public class HexanexusController : MonoBehaviour
     private bool isRotating = false;
     private int currentAxis = -1;
     private Transform pivot;
+
+    public string sceneName;
     void Awake()
     {
         foreach (Transform t in CubicPar) cubes.Add(t);
+        sceneName=gameObject.scene.name;
     }
 
     void Start()
@@ -268,6 +272,13 @@ public class HexanexusController : MonoBehaviour
         if (rubikChecker.CheckWin())
         {
             Debug.Log("aaaaaaaaaaaa");
+            Time.timeScale=1;
+            StartCoroutine(Return());
         }
+    }
+    IEnumerator Return()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneReturnManager.Instance.Return();
     }
 }

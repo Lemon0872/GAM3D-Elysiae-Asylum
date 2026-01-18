@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerPush : MonoBehaviour,IInteractable
 {
     public CubeController cube;
+    public Transform playerTransform;
     public KeyCode interactKey = KeyCode.E;
     [SerializeField] private string interactText;
     public string GetInteractText()
@@ -17,7 +18,8 @@ public class PlayerPush : MonoBehaviour,IInteractable
 
     public void Interact(Transform interactorTransform)
     {
-        cube.TryPush(transform);
+        Debug.Log("trying push");
+        cube.TryPush(playerTransform);
     }
 
     void Update()
