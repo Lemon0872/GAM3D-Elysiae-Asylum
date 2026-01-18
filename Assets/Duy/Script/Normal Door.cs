@@ -6,6 +6,11 @@ public class NormalDoor : MonoBehaviour, IInteractable
     [SerializeField] private string closeText = "E to Close";
     private Animator animator;
     private bool isOpen;
+    [SerializeField] private AudioSource audioSource;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip openClip;
+    [SerializeField] private AudioClip closeClip;
     public void Interact(Transform interactorTransform)
     {
         ToggleDoor();
@@ -21,8 +26,12 @@ public class NormalDoor : MonoBehaviour, IInteractable
 
     void ToggleDoor()
     {
-        isOpen = !isOpen;
-        animator.SetBool("isOpen", isOpen);
+        /*isOpen = !isOpen;
+        animator.SetBool("isOpen", isOpen);*/
+        if (isOpen)
+            CloseDoor();
+        else
+            OpenDoor();
     }
 
     void Start()
@@ -34,12 +43,16 @@ public class NormalDoor : MonoBehaviour, IInteractable
     {
         isOpen = true;
         animator.SetBool("isOpen", true);
+        if (audioSource && openClip)
+            audioSource.PlayOneShot(openClip);
     }
 
     public void CloseDoor()
     {
         isOpen = false;
         animator.SetBool("isOpen", false);
+        if (audioSource && closeClip)
+            audioSource.PlayOneShot(closeClip);
     }
 
 }

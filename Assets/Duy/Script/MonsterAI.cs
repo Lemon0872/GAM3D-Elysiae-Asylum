@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,8 +7,13 @@ public class MonsterAI : MonoBehaviour
     public Transform player;
     private Animator animator;
 
-
+    private bool hasWon;
     private NavMeshAgent agent;
+
+    [Header("Win Behavior")]
+    public string roarAnimName = "Roar";
+    public AudioClip roarClip;
+    public float disappearDelay = 2.5f;
 
     void Start()
     {
@@ -18,6 +24,7 @@ public class MonsterAI : MonoBehaviour
 
     void LateUpdate()
     {
+        if (hasWon) return;
         if (IsPlayerLookingAtMe())
             Freeze();
         else
@@ -81,4 +88,31 @@ public class MonsterAI : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
+    public void OnPlayerDied()
+    {
+        if (hasWon) return;
+        hasWon = true;
+
+        // Stop movement & AI
+        agent.isStopped = true;
+        agent.ResetPath();
+        agent.velocity = Vector3.zero;
+
+        // Play roar animation
+        animator.speed = 1f;
+        animator.Play(roarAnimName);
+
+        // Play roar sound
+        if (audioSource && roarClip)
+            audioSource.PlayOneShot(roarClip);
+
+        // Disappear after delay
+        StartCoroutine(DisappearAfterDelay());
+    }
+
+    IEnumerator DisappearAfterDelay()
+    {
+        yield return new WaitForSeconds(disappearDelay);
+        Destroy(gameObject);
+    }
 }
