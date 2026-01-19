@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 65d9f1f8a59ac4449ad942750c211569
+guid: a4835e5cba86df142af5aae8d303dc40
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Paradise
-    second: {fileID: 2100000, guid: 7cbe0b5cd7928a644953e89771c3e67d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
