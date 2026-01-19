@@ -38,56 +38,56 @@ public class HammerController : MonoBehaviour
     }
 
     private void OnWack()
-{
-    if (!isHitting)
     {
-        StartCoroutine(HitRoutine());
-
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+        if (!isHitting)
         {
-            Mole mole = hit.collider.GetComponent<Mole>();
-            if (mole != null)
+            StartCoroutine(HitRoutine());
+
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
             {
-                mole.OnHit(); // xử lý chính
-
-                if (mole.hasLetter)
+                Mole mole = hit.collider.GetComponent<Mole>();
+                if (mole != null)
                 {
-                    char letter = mole.letter;
-                    Debug.Log("✅ Đã nhận ký tự: " + letter);
+                    mole.OnHit(); // xử lý chính
 
-                    // Tính toán các ký tự còn lại
-                    string target = GameManager.Instance.targetWord;
-                    List<char> collected = GameManager.Instance.collectedLetters;
-                    List<char> remaining = new List<char>();
-
-                    foreach (char c in target)
+                    if (mole.hasLetter)
                     {
-                        if (!collected.Contains(c))
-                        {
-                            remaining.Add(c);
-                        }
-                    }
+                        char letter = mole.letter;
+                        Debug.Log("✅ Đã nhận ký tự: " + letter);
 
-                    string remainingStr = string.Join(", ", remaining);
-                    Debug.Log("🔤 Còn lại các ký tự: " + remainingStr);
+                        // Tính toán các ký tự còn lại
+                        string target = GameManager.Instance.targetWord;
+                        List<char> collected = GameManager.Instance.collectedLetters;
+                        List<char> remaining = new List<char>();
+
+                        foreach (char c in target)
+                        {
+                            if (!collected.Contains(c))
+                            {
+                                remaining.Add(c);
+                            }
+                        }
+
+                        string remainingStr = string.Join(", ", remaining);
+                        Debug.Log("🔤 Còn lại các ký tự: " + remainingStr);
+                    }
+                    else
+                    {
+                        Debug.Log("💥 Đã đập mole không có chữ cái");
+                    }
                 }
                 else
                 {
-                    Debug.Log("💥 Đã đập mole không có chữ cái");
+                    Debug.Log("❌ Raycast trúng vật thể không phải mole: " + hit.collider.name);
                 }
             }
             else
             {
-                Debug.Log("❌ Raycast trúng vật thể không phải mole: " + hit.collider.name);
+                Debug.Log("⚠️ Không trúng gì cả khi raycast");
             }
         }
-        else
-        {
-            Debug.Log("⚠️ Không trúng gì cả khi raycast");
-        }
     }
-}
 
 
     IEnumerator HitRoutine()
@@ -104,8 +104,9 @@ public class HammerController : MonoBehaviour
             transform.localRotation = Quaternion.Lerp(transform.localRotation, originalRotation, Time.deltaTime * returnSpeed);
             yield return null;
         }
-
+        
         transform.localRotation = originalRotation;
+        Debug.Log("đã trở về");
         isHitting = false;
     }
 
