@@ -108,21 +108,23 @@ public class CubeController : MonoBehaviour
 
     void TryTeleport(TeleportTile teleport)
     {
-        Debug.Log("try tele");
-        if (isTeleporting)
+        Debug.Log("Try teleport");
+
+        if (isTeleporting || teleport == null || teleport.pairedTile == null)
         {
             state = CubeState.Idle;
             return;
         }
 
-        if (teleport == null || teleport.pairedTile == null)
+        // Không cho teleport nếu paired là chính nó
+        if (teleport == teleport.pairedTile)
         {
-            Debug.LogWarning("Teleport tile missing pair");
+            Debug.LogWarning("Teleport paired to itself");
             state = CubeState.Idle;
             return;
         }
 
-        // Phải đi từ tile khác sang teleport
+        // Phải đi từ tile KHÁC sang teleport
         if (!lastGridPos.HasValue || lastGridPos.Value == gridPos)
         {
             state = CubeState.Idle;
@@ -136,30 +138,38 @@ public class CubeController : MonoBehaviour
             state = CubeState.Idle;
             return;
         }
-        StopMovementCoroutines();
-        StartCoroutine(TeleportTo(teleport.pairedTile));
-        Debug.Log($"Teleport from {gridPos} to {teleport.pairedTile.gridPos}");
 
+        StopMovementCoroutines();
+        teleport.SpawnParticleAtTile();
+
+        StartCoroutine(TeleportTo(teleport.pairedTile));
     }
+
 
     IEnumerator TeleportTo(TeleportTile target)
     {
-        Debug.Log("dang tele");
-
+        Debug.Log("Teleporting...");
+        StartEmission();
         isTeleporting = true;
         state = CubeState.Moving;
 
-        yield return new WaitForSeconds(0.1f); // có thể bỏ nếu không cần FX
+        Vector2Int from = gridPos;
 
-        lastGridPos = target.gridPos;
-        gridPos = target.gridPos;
+        yield return new WaitForSeconds(1f);
+
+        lastGridPos = from;          
+        gridPos = target.gridPos;     
 
         transform.position = GridUtility.GridToWorld(gridPos, cubeY);
 
         isTeleporting = false;
         state = CubeState.Idle;
-        Debug.Log("Teleport to " + target.gridPos);
+        StopEmission();
+        Debug.Log($"Teleport from {from} to {gridPos}");
+
+        CheckTile(); 
     }
+
 
     Vector2Int? FindNextSupportedTile(Vector2Int start, Vector2Int dir)
     {
@@ -210,6 +220,7 @@ public class CubeController : MonoBehaviour
             state = CubeState.Idle;
             return;
         }
+        tile.SpawnEnterFX();
         switch (tile.type)
         {
             case TileType.Support:

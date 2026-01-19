@@ -79,3 +79,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tile
   type: 2
   gridPos: {x: 6, y: 0}
+  enterFXPrefab: {fileID: 8378648546881499446, guid: 867c572a5be680d42a042d2349f10143, type: 3}

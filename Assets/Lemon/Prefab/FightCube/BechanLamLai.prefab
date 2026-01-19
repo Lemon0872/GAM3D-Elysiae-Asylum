@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tile
   type: 1
   gridPos: {x: 2, y: 0}
+  enterFXPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
 --- !u!1 &7305382458800573395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1068952417440543872, guid: fdb7d544400d0404497098827959caa2, type: 3}

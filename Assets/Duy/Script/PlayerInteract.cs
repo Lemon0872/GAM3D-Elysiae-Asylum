@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour {
-
+    public float interactRange =3f;
 
     private void Update() 
     {
@@ -19,7 +19,6 @@ public class PlayerInteract : MonoBehaviour {
     public IInteractable GetInteractableObject() 
     {
         List<IInteractable> interactableList = new List<IInteractable>();
-        float interactRange = 3f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray) {
             if (collider.TryGetComponent(out IInteractable interactable)) {
