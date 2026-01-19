@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Outline
   outlineMode: 0
   outlineColor: {r: 0.7735849, g: 0.17369162, b: 0.17369162, a: 1}
-  outlineWidth: 2
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -162,3 +162,5 @@ MonoBehaviour:
   isGlowing: 1
   emissionIntensity: 20
   emissionColor: {r: 1, g: 0.953922, b: 0.088679194, a: 1}
+  rend: {fileID: 0}
+  mat: {fileID: 0}
