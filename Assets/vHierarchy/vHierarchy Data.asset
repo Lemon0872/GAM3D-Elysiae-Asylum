@@ -16,6 +16,7 @@ MonoBehaviour:
     keys:
     - 99c9720ab356a0642a771bea13969a05
     - cd99c80b415bece409ab9029ea36adf7
+    - 3041937a61dd8584d85e28ecdcb254e1
     values:
     - goDatas_byGlobalId:
         keys:
@@ -55,7 +56,6 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1926701882-0
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-2048459511-0
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1890580006-0
-        - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1722331411-0
         values:
         - colorIndex: 0
           iconNameOrGuid: Camera Icon
@@ -129,8 +129,12 @@ MonoBehaviour:
           iconNameOrGuid: StandaloneInputModule Icon
           isIconRecursive: 0
           isColorRecursive: 0
-        - colorIndex: 0
-          iconNameOrGuid: Folder Icon
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-919132149155446097-1420035054
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: AvatarMask On Icon
           isIconRecursive: 0
           isColorRecursive: 0
   bookmarks: []
