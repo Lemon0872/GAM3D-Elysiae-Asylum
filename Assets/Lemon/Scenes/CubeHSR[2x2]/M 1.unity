@@ -204,6 +204,7 @@ MonoBehaviour:
   CubicPar: {fileID: 683844584}
   cubes: []
   rotationSpeed: 200
+  sceneName: 
 --- !u!114 &60478438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +611,11 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -658,6 +663,10 @@ PrefabInstance:
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Name
       value: Cube (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: m_TagString
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5432032880375592492, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: outlineWidth
@@ -846,10 +855,10 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -901,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Non-Lunk
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1108,10 +1117,10 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.z
@@ -1163,7 +1172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Non-Lunk
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1407,10 +1416,10 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.z
@@ -1462,7 +1471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Lunk
+      value: Non-Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1497,7 +1506,11 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -1546,6 +1559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: m_TagString
+      value: Lunk
+      objectReference: {fileID: 0}
     - target: {fileID: 5432032880375592492, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: outlineWidth
       value: 6
@@ -1575,10 +1592,10 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1630,7 +1647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Lunk
+      value: Non-Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
