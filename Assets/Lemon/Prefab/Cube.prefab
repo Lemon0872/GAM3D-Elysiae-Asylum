@@ -163,4 +163,3 @@ MonoBehaviour:
   emissionIntensity: 20
   emissionColor: {r: 1, g: 0.953922, b: 0.088679194, a: 1}
   rend: {fileID: 0}
-  mat: {fileID: 0}

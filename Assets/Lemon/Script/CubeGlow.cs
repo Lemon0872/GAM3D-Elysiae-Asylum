@@ -7,14 +7,13 @@ public class CubeGlow : MonoBehaviour
     public Color emissionColor = Color.white; // hoặc màu gốc
 
     public Renderer rend;
-    public Material mat;
 
     void Awake()
     {
         rend = GetComponent<Renderer>();
-        mat = rend.material; // clone giữ nguyên shader
-        rend.material = mat;
+        emissionColor = rend.material.GetColor("_EmissionColor");
     }
+
     void Update()
     {
 
@@ -23,15 +22,16 @@ public class CubeGlow : MonoBehaviour
     public void SetGlow(bool state)
     {
         isGlowing = state;
+
         if (isGlowing)
-        {
-            mat.EnableKeyword("_EMISSION");
-            mat.SetColor("_EmissionColor", emissionColor * emissionIntensity);
+            {
+        rend.material.EnableKeyword("_EMISSION");
+        rend.material.SetColor("_EmissionColor", emissionColor * emissionIntensity);
         }
         else
         {
-            mat.SetColor("_EmissionColor", Color.black);
-            mat.DisableKeyword("_EMISSION");
+            rend.material.SetColor("_EmissionColor", Color.black);
+            rend.material.DisableKeyword("_EMISSION");
         }
     }
 }
