@@ -21,11 +21,17 @@ public class MoleSpawner : MonoBehaviour
 
     void Update()
     {
-        if (spawningStopped) return;
+        if (spawningStopped) 
+        {
+            Debug.Log("Stopped");
+            return;
+        }
 
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
+            
+            Debug.Log("Havent Stopped");
             SpawnMole();
             timer = 0f;
         }
