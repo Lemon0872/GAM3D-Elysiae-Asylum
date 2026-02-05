@@ -13,24 +13,16 @@ public class cubeconfig : MonoBehaviour
     {
         ApplyConfiguration();
     }
-    void OnValidate()
-    {
-        // ✅ Cập nhật tag, material, và symbol
-        if (isLunk)
-        {
-            cubeRenderer.sharedMaterial = lunkMaterial;
-            gameObject.tag = "Lunk";
-        }
-        else
-        {
-            cubeRenderer.sharedMaterial = nonLunkMaterial;
-            gameObject.tag = "Non-Lunk";
-        }
-    }
     void Start()
     {
         
     }
+    void OnValidate()
+    {
+        ApplyConfiguration();
+        // if(Input.GetKeyDown(KeyCode.L)) isLunk=!isLunk;
+    }
+
     public void ApplyConfiguration()
     {
         if (cubeRenderer == null)
@@ -38,6 +30,19 @@ public class cubeconfig : MonoBehaviour
 
         if (cubeRenderer == null) return;
 
-        
+        if (isLunk)
+        {
+            if (lunkMaterial != null)
+                cubeRenderer.sharedMaterial = lunkMaterial;
+
+            gameObject.tag = "Lunk";
+        }
+        else
+        {
+            if (nonLunkMaterial != null)
+                cubeRenderer.sharedMaterial = nonLunkMaterial;
+
+            gameObject.tag = "Non-Lunk";
+        }
     }
 }

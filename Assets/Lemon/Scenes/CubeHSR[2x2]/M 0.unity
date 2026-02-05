@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -204,6 +204,7 @@ MonoBehaviour:
   CubicPar: {fileID: 683844584}
   cubes: []
   rotationSpeed: 200
+  sceneName: 
 --- !u!114 &60478438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ GameObject:
   - component: {fileID: 156186036}
   - component: {fileID: 156186039}
   - component: {fileID: 156186040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -403,10 +404,10 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -458,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Lunk
+      value: Non-Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5432032880375592492, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: outlineWidth
@@ -517,13 +518,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1485495003}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.z
@@ -575,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Non-Lunk
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -610,7 +615,11 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -659,6 +668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: m_TagString
+      value: Lunk
+      objectReference: {fileID: 0}
     - target: {fileID: 5432032880375592492, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: outlineWidth
       value: 6
@@ -685,6 +698,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1485495003}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -843,13 +860,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 21659068}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -901,7 +922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Non-Lunk
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1105,13 +1126,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1485495003}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.z
@@ -1163,7 +1188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Non-Lunk
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1404,6 +1429,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1485495003}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1497,7 +1526,11 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -1546,6 +1579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: m_TagString
+      value: Lunk
+      objectReference: {fileID: 0}
     - target: {fileID: 5432032880375592492, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: outlineWidth
       value: 6
@@ -1572,13 +1609,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 21659068}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1630,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Lunk
+      value: Non-Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1700,7 +1741,11 @@ PrefabInstance:
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -1748,6 +1793,10 @@ PrefabInstance:
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Name
       value: Cube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: m_TagString
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5432032880375592492, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: outlineWidth
@@ -1910,13 +1959,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 21659068}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
     - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: isLunk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1968,7 +2021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Lunk
+      value: Non-Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
@@ -1992,10 +2045,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 21659068}
     m_Modifications:
+    - target: {fileID: -9069572552237688827, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isGlowing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392763879422236424, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 7963e90184f1d454d852f360984591a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 7332f6cc58c63d545a25709e8e479bea, type: 2}
+    - target: {fileID: 2213664378649430966, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
+      propertyPath: isLunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -2046,7 +2107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5242224383823310593, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_TagString
-      value: Non-Lunk
+      value: Lunk
       objectReference: {fileID: 0}
     - target: {fileID: 5605627587178242156, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}
       propertyPath: m_Enabled
