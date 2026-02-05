@@ -160,6 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isGlowing: 1
-  emissionIntensity: 20
+  emissionIntensity: 40
   emissionColor: {r: 1, g: 0.953922, b: 0.088679194, a: 1}
   rend: {fileID: 0}

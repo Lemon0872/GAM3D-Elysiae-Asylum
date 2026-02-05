@@ -5,11 +5,15 @@ TagManager:
   serializedVersion: 3
   tags:
   - Monster
+  - Non-Lunk
+  - Lunk
+  - ItemZ
+  - PlateZ
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Camera
   - Water
   - UI
   - Ragdoll

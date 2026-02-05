@@ -17,6 +17,7 @@ MonoBehaviour:
     - 99c9720ab356a0642a771bea13969a05
     - cd99c80b415bece409ab9029ea36adf7
     - 3041937a61dd8584d85e28ecdcb254e1
+    - 936d0702d3df2574ab019474325a29bc
     values:
     - goDatas_byGlobalId:
         keys:
@@ -135,6 +136,24 @@ MonoBehaviour:
         values:
         - colorIndex: 2
           iconNameOrGuid: AvatarMask On Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-936d0702d3df2574ab019474325a29bc-1464449741-0
+        - globalObjectIdString: GlobalObjectId_V1-2-936d0702d3df2574ab019474325a29bc-124642103-0
+        - globalObjectIdString: GlobalObjectId_V1-2-936d0702d3df2574ab019474325a29bc-94425766-0
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 6
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 5
+          iconNameOrGuid: AudioSource Icon
           isIconRecursive: 0
           isColorRecursive: 0
   bookmarks: []
