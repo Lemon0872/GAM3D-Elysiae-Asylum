@@ -106,6 +106,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8e7e62c66ba46924996e3c47e85bb505, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6402699313012312754}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8e7e62c66ba46924996e3c47e85bb505, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3303448801757757903}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7e62c66ba46924996e3c47e85bb505, type: 3}
 --- !u!1 &7045028238156516011 stripped
 GameObject:
@@ -163,3 +166,18 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 7045028238156516011}
+--- !u!114 &-3303448801757757903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045028238156516011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0f80485ae64b044bb4c4f31d8b7943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FinalPrefabEffects
+  destroySound: {fileID: 0}
+  audioSource: {fileID: 0}
+  particlePrefab: {fileID: 0}

@@ -14,14 +14,18 @@ public class MoleSpawner : MonoBehaviour
     public int maxMoles = 10; // số mole tối đa trong phạm vi
     private List<GameObject> activeMoles = new List<GameObject>();
 
-    [Header("Special Spawn Settings")] 
+    [Header("Special Spawn Settings")]
     public int specialSpawnCount = 10; // số mole spawn xung quanh 
     public GameObject finalPrefab; // prefab đặc biệt sau khi gộp 
     private bool spawningStopped = false;
 
+    [Header("Audio Controller")]
+    [SerializeField] private SoundData spawnSound;
+    [SerializeField] private AudioSource audioSource;
+
     void Update()
     {
-        if (spawningStopped) 
+        if (spawningStopped)
         {
             Debug.Log("Stopped");
             return;
@@ -30,7 +34,7 @@ public class MoleSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            
+
             Debug.Log("Havent Stopped");
             SpawnMole();
             timer = 0f;
@@ -61,6 +65,7 @@ public class MoleSpawner : MonoBehaviour
             moleScript.hasLetter = true;
             moleScript.letter = GameManager.Instance.GetNextNeededLetter();
         }
+        PlaySound(spawnSound, audioSource);
     }
 
     public void HandleLevelComplete()
@@ -91,4 +96,31 @@ public class MoleSpawner : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(spawnCenter, spawnRange);
     }
+
+    private void PlaySound(SoundData data, AudioSource source)
+    {
+        if (data == null || source == null) return;
+
+        source.clip = data.clip;                       // dùng đúng field clip
+        source.outputAudioMixerGroup = data.mixer;     // dùng đúng field mixer
+        source.volume = data.volume;
+        source.loop = data.loop;
+        source.pitch = Random.Range(data.pitchRange.x, data.pitchRange.y);
+
+        if (data.is3D)
+        {
+            source.spatialBlend = 1f; // 3D
+            source.minDistance = data.minDistance;
+            source.maxDistance = data.maxDistance;
+            source.rolloffMode = data.rolloff;
+        }
+        else
+        {
+            source.spatialBlend = 0f; // 2D
+        }
+
+        source.Play();
+    }
+
 }
+
