@@ -33,4 +33,12 @@ public class PressurePlate : MonoBehaviour
 
         onReleased?.Invoke();
     }
+    public void OnPress()
+    {
+        Debug.Log("da an");
+    }
+    public void OnRelease()
+    {
+        Debug.Log("da ve ban dau");
+    }
 }
