@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: AudioDBbase
   m_EditorClassIdentifier: Assembly-CSharp::AudioDatabase
   sfxList: []
-  musicList: []
+  musicList:
+  - {fileID: 11400000, guid: 7594923d1292bbf4b8a58a99a5682f8d, type: 2}

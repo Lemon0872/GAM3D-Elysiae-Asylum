@@ -21,7 +21,10 @@ public class PlayerController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
-
+    void Start()
+    {
+        AudioManager.PlayMusic("MainTheme");
+    }
     private void Update()
     {
         Move();

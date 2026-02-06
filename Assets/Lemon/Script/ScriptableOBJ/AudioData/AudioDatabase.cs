@@ -17,14 +17,16 @@ public class AudioDatabase : ScriptableObject
 
         foreach (var sfx in sfxList)
         {
-            if (!sfxDict.ContainsKey(sfx.id))
-                sfxDict.Add(sfx.id, sfx);
+            string key = sfx.name;
+            if (!sfxDict.ContainsKey(key))
+                sfxDict.Add(key, sfx);
         }
 
         foreach (var music in musicList)
         {
-            if (!musicDict.ContainsKey(music.id))
-                musicDict.Add(music.id, music);
+            string key = music.name;
+            if (!musicDict.ContainsKey(key))
+                musicDict.Add(key, music);
         }
     }
 
