@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lemon/Scenes/MaganicCube.unity
     guid: 936d0702d3df2574ab019474325a29bc
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b421ba90f125f444f80c7503cb843308
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: ab4c185b2793f6a40bac6455840f4de6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
