@@ -2347,6 +2347,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8543179089748071972, guid: ab390734987df8841a7872f29871469c, type: 3}
     - target: {fileID: 8965432155906541683, guid: bd8ef9eb6715a2e48aa1f8e02c7b8684, type: 3}
+      propertyPath: targetWord
+      value: UIA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965432155906541683, guid: bd8ef9eb6715a2e48aa1f8e02c7b8684, type: 3}
       propertyPath: moleSpawner
       value: 
       objectReference: {fileID: 1248139018}
