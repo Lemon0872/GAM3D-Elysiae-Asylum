@@ -3,8 +3,12 @@ using System.Collections;
 
 public class CameraCutsceneController : MonoBehaviour
 {
-    [Header("Overlay Camera")]
+    [Header("Cameras")]
     public Camera cutsceneCamera;
+    public Camera mainCam;
+
+    [Header("Optional")]
+    public MonoBehaviour playerControllerToDisable;
 
     private ICameraCastMode smoothMode = new SmoothMoveMode();
     private ICameraCastMode teleportMode = new TeleportMode();
@@ -18,31 +22,41 @@ public class CameraCutsceneController : MonoBehaviour
             cutsceneCamera.gameObject.SetActive(false);
     }
 
-    public void Cast(CameraCutsceneData data, Transform target)
+    public void Cast(CameraCutsceneBinding binding)
     {
         if (currentRoutine != null)
             StopCoroutine(currentRoutine);
 
-        currentRoutine = StartCoroutine(CastRoutine(data, target));
+        currentRoutine = StartCoroutine(CastRoutine(binding));
     }
 
-    private IEnumerator CastRoutine(CameraCutsceneData data, Transform target)
+    private IEnumerator CastRoutine(CameraCutsceneBinding binding)
     {
-        // 1️⃣ Enable camera
-        cutsceneCamera.gameObject.SetActive(true);
+        CameraCutsceneData data = binding.data;
 
-        // 2️⃣ Save state
+        // 1️⃣ Enable cutscene cam
+        cutsceneCamera.gameObject.SetActive(true);
+        mainCam.gameObject.SetActive(false);
+
+        // 2️⃣ Lock player
+        if (playerControllerToDisable != null)
+            playerControllerToDisable.enabled = false;
+
+        // 3️⃣ Save original state
         originalState = new CameraState(cutsceneCamera.transform);
 
-        // 3️⃣ Execute mode
+        // 4️⃣ Execute mode
         ICameraCastMode mode =
             data.mode == CameraCastMode.SmoothMove
             ? smoothMode
             : teleportMode;
 
-        yield return mode.Execute(cutsceneCamera, data, target);
+        yield return mode.Execute(cutsceneCamera, binding);
 
-        // 4️⃣ Render trong thời gian quy định (unscaled)
+        // 5️⃣ Vừa đến vị trí → Invoke event
+        binding.onArrived?.Invoke();
+
+        // 6️⃣ RenderDuration (unscaled time)
         if (data.renderDuration > 0f)
         {
             float t = 0f;
@@ -51,11 +65,18 @@ public class CameraCutsceneController : MonoBehaviour
                 t += Time.unscaledDeltaTime;
                 yield return null;
             }
-
-            // 5️⃣ Restore & disable
-            originalState.Restore(cutsceneCamera.transform);
-            cutsceneCamera.gameObject.SetActive(false);
         }
+
+        // 7️⃣ Restore camera
+        originalState.Restore(cutsceneCamera.transform);
+
+        // 8️⃣ Disable cutscene cam
+        cutsceneCamera.gameObject.SetActive(false);
+        mainCam.gameObject.SetActive(true);
+
+        // 9️⃣ Unlock player
+        if (playerControllerToDisable != null)
+            playerControllerToDisable.enabled = true;
 
         currentRoutine = null;
     }

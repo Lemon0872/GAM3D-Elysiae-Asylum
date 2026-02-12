@@ -3,5 +3,8 @@ using UnityEngine;
 
 public interface ICameraCastMode
 {
-    IEnumerator Execute(Camera cam, CameraCutsceneData data, Transform target);
+    IEnumerator Execute(
+        Camera cam,
+        CameraCutsceneBinding binding
+    );
 }

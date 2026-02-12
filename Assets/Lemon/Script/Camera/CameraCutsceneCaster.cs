@@ -13,6 +13,6 @@ public class CameraCutsceneCaster : MonoBehaviour
             return;
 
         var binding = cutscenes[index];
-        controller.Cast(binding.data, binding.target);
+        controller.Cast(binding);
     }
 }

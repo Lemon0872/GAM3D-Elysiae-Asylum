@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class CameraCutsceneBinding
 {
-    public CameraCutsceneData data; // asset
-    public Transform target;        // scene
+    public CameraCutsceneData data;
+    public Transform target;
+    [Header("Events")]
+    public UnityEvent onArrived;
 }
