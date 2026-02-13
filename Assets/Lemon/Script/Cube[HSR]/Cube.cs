@@ -271,7 +271,7 @@ public class HexanexusController : MonoBehaviour
 
         if (rubikChecker.CheckWin())
         {
-            Debug.Log("aaaaaaaaaaaa");
+            Debug.Log("wincubeHSR");
             Time.timeScale=1;
             StartCoroutine(Return());
         }
@@ -279,6 +279,6 @@ public class HexanexusController : MonoBehaviour
     IEnumerator Return()
     {
         yield return new WaitForSeconds(3.5f);
-        SceneReturnManager.Instance.Return();
+        SceneFlowManager.Instance.Return();
     }
 }
