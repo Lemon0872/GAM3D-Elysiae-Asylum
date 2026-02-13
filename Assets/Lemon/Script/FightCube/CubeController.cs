@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CubeController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class CubeController : MonoBehaviour
 
     Coroutine moveRoutine;
     Coroutine returnRoutine;
+    public UnityEvent onArrived;
 
     [Header("Emission")]
     public Color emissionColor = Color.cyan;
@@ -233,7 +235,7 @@ public class CubeController : MonoBehaviour
 
             case TileType.Goal:
                 state = CubeState.Win;
-                Debug.Log("WIN!");
+                onArrived?.Invoke();
                 break;
             case TileType.Teleport:
                 TryTeleport(tile as TeleportTile);

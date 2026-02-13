@@ -11,6 +11,7 @@ public class SceneFlowManager : MonoBehaviour
 
     Stack<string> sceneStack = new();
     bool isTransitioning;
+    private Scene previousScene;
 
     void Awake()
     {
@@ -57,7 +58,8 @@ public class SceneFlowManager : MonoBehaviour
 
         while (!op.isDone)
             yield return null;
-
+        previousScene = SceneManager.GetActiveScene();
+        HideScene(previousScene);
         SceneManager.SetActiveScene(
             SceneManager.GetSceneByName(sceneName));
 
@@ -106,6 +108,21 @@ public class SceneFlowManager : MonoBehaviour
         loadingUI.Hide();
         isTransitioning = false;
     }
+    
+    void HideScene(Scene scene)
+    {
+        var roots = scene.GetRootGameObjects();
+
+        foreach (var go in roots)
+            go.SetActive(false);
+    }
+    void ShowScene(Scene scene)
+    {
+        var roots = scene.GetRootGameObjects();
+
+        foreach (var go in roots)
+            go.SetActive(true);
+    }
 
     #endregion
 
@@ -126,7 +143,7 @@ public class SceneFlowManager : MonoBehaviour
         loadingUI.Show();
 
         string sceneName = sceneStack.Pop();
-
+        ShowScene(previousScene);
         AsyncOperation op =
             SceneManager.UnloadSceneAsync(sceneName);
 

@@ -8,7 +8,10 @@ public class ItemInteractor : MonoBehaviour,IInteractable
     [SerializeField] float placeDistance;
     [SerializeField] private PressurePlate pressurePlate;
     [SerializeField] private string plateZTag = "PlateZ";
-
+    void Start()
+    {
+        
+    }
     public string GetInteractText()
     {
         return interactText;
@@ -21,11 +24,13 @@ public class ItemInteractor : MonoBehaviour,IInteractable
 
     void IInteractable.Interact(Transform interactorTransform)
     {
+        holder=GameObject.FindGameObjectWithTag("Holder").transform;
         PickUp(holder);
     }
     void Update()
     {
         if(Input.GetMouseButtonDown(1)&&isHeld) Place();
+        
     }
     void OnCollisionEnter(Collision collision)
     {

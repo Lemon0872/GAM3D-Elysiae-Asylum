@@ -13,6 +13,8 @@ public class CameraCutsceneCaster : MonoBehaviour
             return;
 
         var binding = cutscenes[index];
+        if(binding.hasCast&&binding.OnDisable) return;
+        binding.hasCast=true;
         controller.Cast(binding);
     }
 }

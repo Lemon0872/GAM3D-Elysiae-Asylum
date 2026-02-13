@@ -23,6 +23,8 @@ public class SequentialMotion : MonoBehaviour
 
     [Header("Motion Phases (Execute Once Per Play)")]
     public List<MotionPhase> phases = new List<MotionPhase>();
+    [Header("Standalone Motions (PlayAlone)")]
+    public List<MotionPhase> standaloneMotions = new List<MotionPhase>();
 
     [Header("Play Call Control")]
     public bool allowMultiplePlayCalls = true;
@@ -56,6 +58,48 @@ public class SequentialMotion : MonoBehaviour
 
         currentPhase = 0;
         PlayNext();
+    }
+    public void PlayAlone(int index)
+    {
+        if (index < 0 || index >= standaloneMotions.Count)
+            return;
+
+        MotionPhase phase = standaloneMotions[index];
+
+        // Base lấy tại thời điểm gọi
+        Vector3 basePos = transform.position;
+        Quaternion baseRot = transform.rotation;
+
+        // ===== MOVE =====
+        if (phase.useMove)
+        {
+            Vector3 target = basePos + phase.moveOffset;
+
+            LeanTween.move(gameObject, target, phase.moveTime)
+                .setEase(phase.moveEase);
+        }
+
+        // ===== ROTATE =====
+        if (phase.useRotate)
+        {
+            Vector3 axis = phase.rotateAxis.normalized;
+            float targetAngle = phase.rotateAngle;
+
+            LeanTween.value(gameObject, 0f, targetAngle, phase.rotateTime)
+                .setEase(phase.rotateEase)
+                .setOnUpdate((float angle) =>
+                {
+                    transform.rotation =
+                        baseRot *
+                        Quaternion.AngleAxis(angle, axis);
+                })
+                .setOnComplete(() =>
+                {
+                    transform.rotation =
+                        baseRot *
+                        Quaternion.AngleAxis(targetAngle, axis);
+                });
+        }
     }
 
     // =============================

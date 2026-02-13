@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.06178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.30386
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029525369266837727, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 9.93822
       objectReference: {fileID: 0}
     - target: {fileID: 2029525369266837727, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6.3038597
       objectReference: {fileID: 0}
     - target: {fileID: 8561767199983086897, guid: fdb7d544400d0404497098827959caa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tile
   type: 1
-  gridPos: {x: 2, y: 0}
+  gridPos: {x: 6, y: -2}
   enterFXPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
 --- !u!1 &7305382458800573395 stripped
 GameObject:

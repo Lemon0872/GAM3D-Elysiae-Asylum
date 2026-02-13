@@ -9,6 +9,7 @@ TagManager:
   - Lunk
   - ItemZ
   - PlateZ
+  - Holder
   layers:
   - Default
   - TransparentFX

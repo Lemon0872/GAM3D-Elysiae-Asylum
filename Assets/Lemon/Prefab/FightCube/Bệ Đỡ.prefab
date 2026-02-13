@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 058215780fb169c43a8eb78d0227b23a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 058215780fb169c43a8eb78d0227b23a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.049999524
+      value: 0.07500048
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 058215780fb169c43a8eb78d0227b23a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 058215780fb169c43a8eb78d0227b23a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 058215780fb169c43a8eb78d0227b23a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tile
   type: 0
-  gridPos: {x: 0, y: 0}
+  gridPos: {x: 2, y: 0}
   enterFXPrefab: {fileID: 4809171458859421548, guid: 4e91ed1a8efe7044785b9bd97a47d87f, type: 3}
 --- !u!64 &-4615661810318315746
 MeshCollider:
