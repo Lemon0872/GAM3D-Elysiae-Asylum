@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -9,12 +10,21 @@ public enum GameState
     Pause
 }
 
+[System.Serializable]
+public class MiniGameEntry
+{
+    public string ID;
+    public bool isCompleted;
+    public UnityEngine.Events.UnityEvent OnCompleted;
+}
+
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Instance;
-
     public GameState CurrentState { get; private set; }
-
+    [SerializeField] 
+    List<MiniGameEntry> miniGames = new();
+    [SerializeField] string mainSceneName;
     HashSet<GameState> pausedStates = new()
     {
         GameState.Pause
@@ -32,6 +42,25 @@ public class GameStateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SetState(GameState.Gameplay);
+        SceneManager.sceneUnloaded += HandleSceneUnloaded;
+    }
+    
+    void HandleSceneUnloaded(Scene scene)
+    {
+            CheckCompletedMiniGames();
+            Debug.Log("thuc hien check");
+    }
+
+    void CheckCompletedMiniGames()
+    {
+        foreach (var entry in miniGames)
+        {
+            if (entry.isCompleted)
+            {
+                entry.OnCompleted?.Invoke();
+                entry.isCompleted = false;
+            }
+        }
     }
 
     public void SetState(GameState newState)
@@ -44,5 +73,18 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = pausedStates.Contains(newState) ? 0f : 1f;
 
         Debug.Log($"State → {newState}");
+    }
+    public void MarkMiniGameCompleted(string id)
+    {
+        var entry = miniGames.Find(m => m.ID == id);
+
+        if (entry != null)
+        {
+            entry.isCompleted = true;
+        }
+    }
+    public void gamestatetest()
+    {
+        Debug.Log("da win roi");
     }
 }

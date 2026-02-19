@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RubikChecker : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class RubikChecker : MonoBehaviour
     public Transform goalA, goalB;
     public float endA, endB;
     public Transform PivotCube;
-
+    [SerializeField] private string id;
+    [SerializeField] private Image background;
     private List<Transform> rubikCubes = new List<Transform>();
     private List<Transform> aCubes = new List<Transform>();
     private List<Transform> bCubes = new List<Transform>();
-
-    public bool isWin = false;
+    
     [SerializeField] LeanTweenType type;
     void Start()
     {
@@ -62,6 +63,9 @@ public class RubikChecker : MonoBehaviour
             }
 
         }
+        
+        background.color= Color.yellow;
+        GameStateManager.Instance.MarkMiniGameCompleted(id);
         StartCoroutine(MoveABatEnd());
         return true;
     }
