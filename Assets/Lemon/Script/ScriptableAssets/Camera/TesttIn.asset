@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraCutsceneData
   mode: 0
   offset: {x: 5, y: 2, z: -5}
-  renderDuration: 2
+  renderDuration: 5
   moveTime: 1

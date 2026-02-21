@@ -1,36 +1,62 @@
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.ShortcutManagement;
 using UnityEngine;
+using System.Globalization;
 
 [InitializeOnLoad]
-public class SceneViewPositionOverlay
+public static class SceneViewCameraTool
 {
-    static GUIStyle style;
+    static Vector3 lastPosition;
+    static Quaternion lastRotation;
 
-    static SceneViewPositionOverlay()
+    static SceneViewCameraTool()
     {
         SceneView.duringSceneGui += OnSceneGUI;
-
-        style = new GUIStyle();
-        style.normal.textColor = Color.white;
-        style.fontSize = 14;
-        style.fontStyle = FontStyle.Bold;
     }
 
+    // ==============================
+    // Overlay hiển thị
+    // ==============================
     static void OnSceneGUI(SceneView sceneView)
     {
-        Vector3 pos = sceneView.camera.transform.position;
+        if (sceneView.camera == null)
+            return;
+
+        lastPosition = sceneView.camera.transform.position;
+        lastRotation = sceneView.camera.transform.rotation;
 
         Handles.BeginGUI();
 
-        GUI.Box(new Rect(10, 10, 260, 40), "");
-        GUI.Label(
-            new Rect(20, 18, 250, 30),
-            $"Scene Cam Pos:\nX:{pos.x:F2}  Y:{pos.y:F2}  Z:{pos.z:F2}",
-            style
-        );
+        GUILayout.BeginArea(new Rect(10, 10, 300, 60), GUI.skin.window);
+        GUILayout.Label($"Pos: {lastPosition:F2}");
+        GUILayout.Label($"Rot: {lastRotation.eulerAngles:F2}");
+        GUILayout.EndArea();
 
         Handles.EndGUI();
+    }
+
+    // ==============================
+    // Global Shortcut
+    // ==============================
+    [Shortcut("Tools/Copy SceneView Camera", KeyCode.RightBracket, ShortcutModifiers.Control)]
+    static void CopySceneCamera()
+    {
+        SceneView sceneView = SceneView.lastActiveSceneView;
+
+        if (sceneView == null || sceneView.camera == null)
+            return;
+
+        Vector3 pos = sceneView.camera.transform.position;
+
+        // Format chuẩn Inspector
+        EditorGUIUtility.systemCopyBuffer =
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "Vector3({0},{1},{2})",
+        pos.x, pos.y, pos.z
+    );
+        Debug.Log("Copied for Inspector paste.");
     }
 }
 #endif

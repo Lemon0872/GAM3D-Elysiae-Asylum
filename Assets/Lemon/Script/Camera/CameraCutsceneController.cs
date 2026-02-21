@@ -15,6 +15,7 @@ public class CameraCutsceneController : MonoBehaviour
 
     private Coroutine currentRoutine;
     private CameraState originalState;
+    private bool isCasting;
 
     void Awake()
     {
@@ -30,17 +31,17 @@ public class CameraCutsceneController : MonoBehaviour
         currentRoutine = StartCoroutine(CastRoutine(binding));
     }
 
+    void Update()
+    {
+        if(isCasting&&Input.anyKeyDown) backCut();
+    }
     private IEnumerator CastRoutine(CameraCutsceneBinding binding)
     {
         CameraCutsceneData data = binding.data;
-
+        isCasting=true;
         // 1️⃣ Enable cutscene cam
         cutsceneCamera.gameObject.SetActive(true);
         mainCam.gameObject.SetActive(false);
-
-        // 2️⃣ Lock player
-        if (playerControllerToDisable != null)
-            playerControllerToDisable.enabled = false;
 
         // 3️⃣ Save original state
         originalState = new CameraState(cutsceneCamera.transform);
@@ -67,16 +68,15 @@ public class CameraCutsceneController : MonoBehaviour
             }
         }
 
-        // 7️⃣ Restore camera
+        backCut();
+    }
+    void backCut()
+    {
+        isCasting=false;
         originalState.Restore(cutsceneCamera.transform);
 
-        // 8️⃣ Disable cutscene cam
         cutsceneCamera.gameObject.SetActive(false);
         mainCam.gameObject.SetActive(true);
-
-        // 9️⃣ Unlock player
-        if (playerControllerToDisable != null)
-            playerControllerToDisable.enabled = true;
 
         currentRoutine = null;
     }

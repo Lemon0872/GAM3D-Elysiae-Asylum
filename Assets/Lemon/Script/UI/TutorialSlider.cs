@@ -18,6 +18,7 @@ public class TutorialSlider : MonoBehaviour
     [Header("Navigation Buttons")]
     [SerializeField] private Button nextButton;
     [SerializeField] private Button previousButton;
+    [SerializeField] private Button finishButton;
 
     [Header("Pagination")]
     [SerializeField] private Transform paginationRoot;
@@ -42,6 +43,7 @@ public class TutorialSlider : MonoBehaviour
         InitializePagination();
         CreateRenderTexture();
         ShowPageInstant(0);
+        UpdateNavigationButtons();
     }
     void Start()
     {
@@ -91,6 +93,7 @@ public class TutorialSlider : MonoBehaviour
     void InitializePagination()
     {
         dots.Clear();
+        finishButton.gameObject.SetActive(false);
 
         for (int i = 0; i < pages.Count; i++)
         {
@@ -183,6 +186,11 @@ public class TutorialSlider : MonoBehaviour
 
                     newPage.interactable = true;
                     newPage.blocksRaycasts = true;
+                    currentIndex = index;
+
+                    bool isLastPage = currentIndex == pages.Count - 1;
+                    finishButton.gameObject.SetActive(isLastPage);
+
                     UpdatePagination(index);
                     UpdateNavigationButtons();
                     isTransitioning = false;

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public enum GameState
 {
@@ -15,7 +16,7 @@ public class MiniGameEntry
 {
     public string ID;
     public bool isCompleted;
-    public UnityEngine.Events.UnityEvent OnCompleted;
+    public UnityEvent OnCompleted;
 }
 
 public class GameStateManager : MonoBehaviour
