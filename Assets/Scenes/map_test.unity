@@ -16147,90 +16147,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2667282003702803381, guid: b2b5b27db1b0cbd488b874539dd78f2b, type: 3}
   m_PrefabInstance: {fileID: 259679076}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &260727836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 260727838}
-  - component: {fileID: 260727837}
-  m_Layer: 0
-  m_Name: TrackerMG
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &260727837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260727836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21df346fbd05e64d8a91b5c71680aec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DistanceWatcher
-  targetTag: Player
-  points:
-  - id: 0
-    pointTransform: {fileID: 0}
-    position: {x: 6.405334, y: -47.85725, z: 27.53675}
-    radius: 2
-    triggerOnce: 1
-    useCombination: 1
-    combinationIndexes: 01000000
-    onEnter:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 260727837}
-          m_TargetAssemblyTypeName: DistanceWatcher, Assembly-CSharp
-          m_MethodName: testtracker
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    isInside: 0
-    isVisited: 0
-    hasTriggered: 0
-  - id: 1
-    pointTransform: {fileID: 0}
-    position: {x: 7.936462, y: -47.61446, z: 36.14596}
-    radius: 2
-    triggerOnce: 1
-    useCombination: 0
-    combinationIndexes: 
-    onEnter:
-      m_PersistentCalls:
-        m_Calls: []
-    isInside: 0
-    isVisited: 0
-    hasTriggered: 0
---- !u!4 &260727838
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260727836}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.1911, y: -43.25488, z: 48.59494}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &262703720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125434,6 +125350,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f133cd063cef907458bdd55a72af1392, type: 3}
+--- !u!1001 &8650887605218666452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1379259516828030653, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_Name
+      value: TrackerMG
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.1911
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -43.25488
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 48.59494
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736191909565708359, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d74c8331a425cb46aa68fa3a49f92f5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -125453,4 +125426,4 @@ SceneRoots:
   - {fileID: 1292405510}
   - {fileID: 58283271}
   - {fileID: 175377017}
-  - {fileID: 260727838}
+  - {fileID: 8650887605218666452}

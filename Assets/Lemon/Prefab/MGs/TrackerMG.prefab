@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1379259516828030653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736191909565708359}
+  - component: {fileID: 9001632811923300615}
+  m_Layer: 0
+  m_Name: TrackerMG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736191909565708359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379259516828030653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.1911, y: -43.25488, z: 48.59494}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9001632811923300615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379259516828030653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21df346fbd05e64d8a91b5c71680aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistanceWatcher
+  targetTag: Player
+  points:
+  - id: 0
+    pointTransform: {fileID: 0}
+    position: {x: 6.405334, y: -47.85725, z: 27.53675}
+    radius: 2
+    triggerOnce: 1
+    useCombination: 1
+    combinationIndexes: 01000000
+    onEnter:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9001632811923300615}
+          m_TargetAssemblyTypeName: DistanceWatcher, Assembly-CSharp
+          m_MethodName: testtracker
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isInside: 0
+    isVisited: 0
+    hasTriggered: 0
+  - id: 1
+    pointTransform: {fileID: 0}
+    position: {x: 7.936462, y: -47.61446, z: 36.14596}
+    radius: 2
+    triggerOnce: 1
+    useCombination: 0
+    combinationIndexes: 
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+    isInside: 0
+    isVisited: 0
+    hasTriggered: 0
