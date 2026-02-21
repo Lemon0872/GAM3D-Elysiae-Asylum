@@ -58,7 +58,8 @@ public class PlayerDeath : MonoBehaviour
         if (animator) animator.enabled = false;
 
         // 2️⃣ Stabilize ragdoll
-        StartCoroutine(StabilizeRagdoll());
+        //StartCoroutine(StabilizeRagdoll());
+        EnableRagdoll();
         PlayDeathSound();
         FindFirstObjectByType<MonsterAI>()?.OnPlayerDied();
     }
@@ -79,7 +80,7 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
-    IEnumerator StabilizeRagdoll()
+    /*IEnumerator StabilizeRagdoll()
     {
         foreach (Rigidbody rb in ragdollBodies)
         {
@@ -94,6 +95,16 @@ public class PlayerDeath : MonoBehaviour
         foreach (Rigidbody rb in ragdollBodies)
         {
             rb.detectCollisions = true;
+        }
+    }*/
+
+    void EnableRagdoll()
+    {
+        foreach (Rigidbody rb in ragdollBodies)
+        {
+            rb.isKinematic = false;
+            rb.detectCollisions = true;
+            rb.useGravity = true;
         }
     }
 
