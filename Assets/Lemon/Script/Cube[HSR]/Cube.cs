@@ -71,9 +71,17 @@ public class HexanexusController : MonoBehaviour
         if (currentAxis == -1 || isRotating) return;
 
         if (Input.GetKeyDown(KeyCode.A))
+        {
+            AudioManager.PlaySFXAt("Cube[HSR]Rot",transform.position);
             StartCoroutine(RotatePivot(-90));
+        }
+            
         if (Input.GetKeyDown(KeyCode.D))
+        {
+            AudioManager.PlaySFXAt("Cube[HSR]Rot",transform.position);
             StartCoroutine(RotatePivot(90));
+        }
+            
     }
 
     void AttachCubesToPivot()
@@ -195,7 +203,7 @@ public class HexanexusController : MonoBehaviour
                     break;
             }
         }
-
+        
         float rotated = 0f;
         while (rotated < Mathf.Abs(targetAngle))
         {

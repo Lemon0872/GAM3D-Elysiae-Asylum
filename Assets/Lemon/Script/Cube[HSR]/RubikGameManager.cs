@@ -66,6 +66,7 @@ public class RubikChecker : MonoBehaviour
         
         background.color= Color.yellow;
         GameStateManager.Instance.MarkMiniGameCompleted(id);
+        AudioManager.PlaySFXAt("Cube[HSR]Win",transform.position);
         StartCoroutine(MoveABatEnd());
         return true;
     }

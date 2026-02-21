@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de3787a83acde14e9d2d8f77ed9afdd, type: 3}
   m_Name: AudioDBbase
   m_EditorClassIdentifier: Assembly-CSharp::AudioDatabase
-  sfxList: []
+  sfxList:
+  - {fileID: 11400000, guid: ed33d9deaec502c4290fbcbc2fb999f8, type: 2}
+  - {fileID: 11400000, guid: d84fa05c79d675842b77833d2726bc46, type: 2}
+  - {fileID: 11400000, guid: bb381fa4ed75be54983b882844898691, type: 2}
+  - {fileID: 11400000, guid: 9e79df3a351e28b48bfd6517445497e0, type: 2}
+  - {fileID: 11400000, guid: 503ce5958c1fd0b4cbd267f32783e213, type: 2}
+  - {fileID: 11400000, guid: d8628f9dc6a72bf41a5b907dfce5b082, type: 2}
+  - {fileID: 11400000, guid: e18f57635f1766a4bb533811523d1824, type: 2}
   musicList:
   - {fileID: 11400000, guid: 7594923d1292bbf4b8a58a99a5682f8d, type: 2}

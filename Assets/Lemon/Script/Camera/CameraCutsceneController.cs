@@ -19,8 +19,10 @@ public class CameraCutsceneController : MonoBehaviour
 
     void Awake()
     {
-        if (cutsceneCamera != null)
-            cutsceneCamera.gameObject.SetActive(false);
+        // Lưu state gameplay
+        originalState = new CameraState(cutsceneCamera.transform);
+
+        cutsceneCamera.gameObject.SetActive(false);
     }
 
     public void Cast(CameraCutsceneBinding binding)
@@ -31,22 +33,21 @@ public class CameraCutsceneController : MonoBehaviour
         currentRoutine = StartCoroutine(CastRoutine(binding));
     }
 
-    void Update()
-    {
-        if(isCasting&&Input.anyKeyDown) backCut();
-    }
     private IEnumerator CastRoutine(CameraCutsceneBinding binding)
     {
-        CameraCutsceneData data = binding.data;
-        isCasting=true;
-        // 1️⃣ Enable cutscene cam
+        isCasting = true;
+
+        if (playerControllerToDisable != null)
+            playerControllerToDisable.enabled = false;
+
+        // 🔥 Detach camera khỏi Player
+        cutsceneCamera.transform.SetParent(null, true);
+
         cutsceneCamera.gameObject.SetActive(true);
         mainCam.gameObject.SetActive(false);
 
-        // 3️⃣ Save original state
-        originalState = new CameraState(cutsceneCamera.transform);
+        CameraCutsceneData data = binding.data;
 
-        // 4️⃣ Execute mode
         ICameraCastMode mode =
             data.mode == CameraCastMode.SmoothMove
             ? smoothMode
@@ -54,29 +55,40 @@ public class CameraCutsceneController : MonoBehaviour
 
         yield return mode.Execute(cutsceneCamera, binding);
 
-        // 5️⃣ Vừa đến vị trí → Invoke event
-        binding.onArrived?.Invoke();
-
-        // 6️⃣ RenderDuration (unscaled time)
-        if (data.renderDuration > 0f)
+        // RenderDuration
+        if (data.moveDuration > 0f)
         {
             float t = 0f;
-            while (t < data.renderDuration)
+            while (t < data.moveDuration)
             {
                 t += Time.unscaledDeltaTime;
                 yield return null;
             }
         }
 
-        backCut();
+        BackCut();
     }
-    void backCut()
+
+    void Update()
     {
-        isCasting=false;
-        originalState.Restore(cutsceneCamera.transform);
+        if (isCasting && Input.anyKeyDown)
+            BackCut();
+    }
+
+    public void BackCut()
+    {
+        if (!isCasting) return;
+
+        isCasting = false;
 
         cutsceneCamera.gameObject.SetActive(false);
         mainCam.gameObject.SetActive(true);
+
+        // 🔥 Restore parent + local transform gameplay
+        originalState.Restore(cutsceneCamera.transform);
+
+        if (playerControllerToDisable != null)
+            playerControllerToDisable.enabled = true;
 
         currentRoutine = null;
     }

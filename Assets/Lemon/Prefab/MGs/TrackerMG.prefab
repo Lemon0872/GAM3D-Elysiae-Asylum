@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736191909565708359}
   - component: {fileID: 9001632811923300615}
+  - component: {fileID: 5993158803425379953}
   m_Layer: 0
   m_Name: TrackerMG
   m_TagString: Untagged
@@ -84,3 +85,29 @@ MonoBehaviour:
     isInside: 0
     isVisited: 0
     hasTriggered: 0
+--- !u!114 &5993158803425379953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379259516828030653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbad8eec514c8aa408c642141681b567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportSystem
+  fadeImage: {fileID: 0}
+  teleportPairs:
+  - targetTag: Player
+    radius: 2
+    allowTwoWay: 0
+    cooldown: 0.5
+    pointA: {fileID: 0}
+    pointAPosition: {x: -22.46735, y: -47.09244, z: 29.09747}
+    pointB: {fileID: 0}
+    pointBPosition: {x: 7.396091, y: -46.82383, z: 50.70916}
+    effectPrefab: {fileID: 3992058561654064293, guid: 13c990b8270c70b4c9f196019286028c, type: 3}
+    fadeDuration: 0.3
+    autoDestroyEffect: 1
+    effectLifetime: 2

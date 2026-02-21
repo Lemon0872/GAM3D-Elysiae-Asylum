@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e29540bad71713d42883df62d09043d2, type: 3}
-  m_Name: CubeTeleport
+  m_Name: Cube[HSR]Rot
   m_EditorClassIdentifier: Assembly-CSharp::SoundData
-  id: 
-  clip: {fileID: 0}
-  mixer: {fileID: 0}
-  volume: 1
+  clip: {fileID: 8300000, guid: 0300c59be20fd4e42b5a3a294464aef9, type: 3}
+  mixer: {fileID: -9052068345216529293, guid: 1b5ad01339f0f9d46ab64346dc522cd4, type: 2}
+  volume: 2
   pitchRange: {x: 1, y: 1}
-  loop: 0
-  is3D: 1
+  is3D: 0
   minDistance: 1
   maxDistance: 20
   rolloff: 0
+  loop: 0

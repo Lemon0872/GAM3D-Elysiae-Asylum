@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class SceneFlowManager : MonoBehaviour
 {
+    //LoadMinigame() LoadSceneAsync
+    //LoadFullScene() Load bth
+    //Return() gọi khi muốn về main scene từ LoadMinigame()
     public static SceneFlowManager Instance;
 
     [SerializeField] LoadingUI loadingUI;
@@ -134,6 +137,8 @@ public class SceneFlowManager : MonoBehaviour
         if (sceneStack.Count == 0) return;
 
         StartCoroutine(ReturnRoutine());
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     IEnumerator ReturnRoutine()
