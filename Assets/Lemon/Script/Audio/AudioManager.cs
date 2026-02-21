@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    //AudioManager.PlayMusic("[tên scriptable music]");
+    //AudioManager.PlaySFXAt("[tên scriptable SFX]", [vector3 vị trí phát]);
     public static AudioManager Instance;
 
     [SerializeField] AudioDatabase database;
@@ -28,7 +30,7 @@ public class AudioManager : MonoBehaviour
         music = new MusicChannel(database, transform, this);
     }
 
-    public static void PlaySFXAt(string id, Transform emitter)
+    public static void PlaySFXAt(string id, Vector3 emitter)
         => Instance.sfx.PlayAt(id, emitter);
 
     public static void PlayMusic(string id)

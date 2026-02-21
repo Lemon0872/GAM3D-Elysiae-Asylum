@@ -47,16 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraCutsceneCaster
   controller: {fileID: 5712272541651303348}
   cutscenes:
-  - data: {fileID: 11400000, guid: e5caa1e4a1de2dc4980990eb9b24fb66, type: 2}
+  - data: {fileID: 11400000, guid: 0806c8b35ee38e145836a4558e0ae31f, type: 2}
     target: {fileID: 0}
     hasCast: 0
+    OnDisable: 1
     onArrived:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SequentialMotion, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
+          m_TargetAssemblyTypeName: SummonSystem, Assembly-CSharp
+          m_MethodName: Summon
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -65,12 +66,44 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - data: {fileID: 11400000, guid: 604e2758200d32742b4410550ab38ce6, type: 2}
+  - data: {fileID: 11400000, guid: 083d618629fa49c42bf0770b54d12515, type: 2}
     target: {fileID: 0}
     hasCast: 0
+    OnDisable: 0
     onArrived:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SequentialMotion, Assembly-CSharp
+          m_MethodName: PlayAlone
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - data: {fileID: 11400000, guid: 083d618629fa49c42bf0770b54d12515, type: 2}
+    target: {fileID: 0}
+    hasCast: 0
+    OnDisable: 0
+    onArrived:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SequentialMotion, Assembly-CSharp
+          m_MethodName: PlayAlone
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5712272541651303348
 MonoBehaviour:
   m_ObjectHideFlags: 0

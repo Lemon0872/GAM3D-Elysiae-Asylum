@@ -14,6 +14,7 @@ public enum GameState
 [System.Serializable]
 public class MiniGameEntry
 {
+    //GameStateManager.Instance.MarkMiniGameCompleted(id"id là biến string trong scene minigame muốn mark, id phải khớp với ít nhất 1 ptử trong miniGames");
     public string ID;
     public bool isCompleted;
     public UnityEvent OnCompleted;
@@ -25,6 +26,7 @@ public class GameStateManager : MonoBehaviour
     public GameState CurrentState { get; private set; }
     [SerializeField] 
     List<MiniGameEntry> miniGames = new();
+    [Tooltip("tên scene sẽ trở về khi complete minigame")]
     [SerializeField] string mainSceneName;
     HashSet<GameState> pausedStates = new()
     {

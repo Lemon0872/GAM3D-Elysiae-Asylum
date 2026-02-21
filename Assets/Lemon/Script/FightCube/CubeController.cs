@@ -226,18 +226,22 @@ public class CubeController : MonoBehaviour
         switch (tile.type)
         {
             case TileType.Support:
+                AudioManager.PlaySFXAt("Cube[WW]Deny",transform.position);
                 state = CubeState.Idle;
                 break;
 
             case TileType.Blocker:
+                AudioManager.PlaySFXAt("Cube[WW]Stay",transform.position);
                 StartCoroutine(ReturnBack());
                 break;
 
             case TileType.Goal:
+                AudioManager.PlaySFXAt("Cube[WW]Win",transform.position);
                 state = CubeState.Win;
                 onArrived?.Invoke();
                 break;
             case TileType.Teleport:
+                AudioManager.PlaySFXAt("Cube[WW]Teleport",transform.position);
                 TryTeleport(tile as TeleportTile);
             break;
         }

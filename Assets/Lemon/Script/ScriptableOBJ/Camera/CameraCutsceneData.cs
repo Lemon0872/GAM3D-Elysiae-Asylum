@@ -17,7 +17,7 @@ public class CameraCutsceneData : ScriptableObject
 
     [Header("Timing")]
     [Tooltip("Thời gian camera render. <= 0 = giữ camera, không auto disable")]
-    public float renderDuration = 2f;
+    public float moveDuration = 2f;
 
     [Tooltip("Chỉ dùng cho SmoothMove")]
     public float moveTime = 1f;

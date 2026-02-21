@@ -13,21 +13,15 @@ public class TeleportMode : ICameraCastMode
         CameraCutsceneData data = binding.data;
 
         Vector3 targetWorldPos =
-            lookTarget.TransformPoint(data.offset);
+            lookTarget.position
+            + lookTarget.forward * data.offset.z
+            + lookTarget.up * data.offset.y
+            + lookTarget.right * data.offset.x;
 
-        Vector3 targetLocalPos =
-            camTf.parent.InverseTransformPoint(targetWorldPos);
+        camTf.position = targetWorldPos;
+        camTf.LookAt(lookTarget);
 
-        camTf.localPosition = targetLocalPos;
-        camTf.rotation = Quaternion.LookRotation(
-            lookTarget.position - camTf.position,
-            Vector3.up
-        );
-
-        // 👇 Gọi event ngay lập tức
         binding.onArrived?.Invoke();
-
         yield break;
     }
 }
-

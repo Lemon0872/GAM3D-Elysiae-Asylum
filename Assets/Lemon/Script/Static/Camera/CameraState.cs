@@ -1,19 +1,23 @@
 using UnityEngine;
 
+[System.Serializable]
 public struct CameraState
 {
-    public Vector3 position;
-    public Quaternion rotation;
+    public Transform parent;
+    public Vector3 localPosition;
+    public Quaternion localRotation;
 
     public CameraState(Transform cam)
     {
-        position = cam.position;
-        rotation = cam.rotation;
+        parent = cam.parent;
+        localPosition = cam.localPosition;
+        localRotation = cam.localRotation;
     }
 
     public void Restore(Transform cam)
     {
-        cam.position = position;
-        cam.rotation = rotation;
+        cam.SetParent(parent, false);
+        cam.localPosition = localPosition;
+        cam.localRotation = localRotation;
     }
 }

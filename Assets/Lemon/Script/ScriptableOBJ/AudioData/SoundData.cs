@@ -13,7 +13,7 @@ public class SoundData : ScriptableObject
 
     [Header("3D Settings")]
     [Tooltip("Âm thanh 3D")]
-    public bool is3D = true;
+    public bool is3D = false;
     public float minDistance = 1f;
     public float maxDistance = 20f;
     public AudioRolloffMode rolloff = AudioRolloffMode.Logarithmic;

@@ -3,60 +3,46 @@ using System.Collections;
 
 public class SmoothMoveMode : ICameraCastMode
 {
-    public IEnumerator Execute(Camera cam, CameraCutsceneBinding binding)
-    {
-        Transform camTf = cam.transform;
-        CameraCutsceneData data = binding.data;
-        Transform lookTarget = binding.target;
-
-        // 🔥 1️⃣ WORLD position mong muốn
-        Vector3 targetWorldPos = lookTarget.position + data.offset;
-
-        // 🔥 2️⃣ Convert sang LOCAL của parent hiện tại
-        Transform parent = camTf.parent;
-
-        Vector3 targetLocalPos =
-            parent.InverseTransformPoint(targetWorldPos);
-
-        yield return MoveLocal(
-            camTf,
-            targetLocalPos,
-            lookTarget,
-            data.moveTime
-        );
-
-        // 🔒 Snap cuối để tránh lệch do float
-        camTf.localPosition = targetLocalPos;
-
-        camTf.rotation = Quaternion.LookRotation(
-            lookTarget.position - camTf.position,
-            Vector3.up
-        );
-    }
-
-    IEnumerator MoveLocal(
-        Transform cam,
-        Vector3 targetLocalPos,
-        Transform lookTarget,
-        float time
+    public IEnumerator Execute(
+        Camera cam,
+        CameraCutsceneBinding binding
     )
     {
-        float t = 0f;
-        Vector3 startLocalPos = cam.localPosition;
+        Transform camTf = cam.transform;
+        Transform lookTarget = binding.target;
+        CameraCutsceneData data = binding.data;
 
-        while (t < time)
+        Vector3 startPos = camTf.position;
+        Quaternion startRot = camTf.rotation;
+
+        Vector3 targetWorldPos =
+            lookTarget.position
+            + lookTarget.forward * data.offset.z
+            + lookTarget.up * data.offset.y
+            + lookTarget.right * data.offset.x;
+
+        Quaternion targetRot =
+            Quaternion.LookRotation(
+                lookTarget.position - targetWorldPos,
+                Vector3.up
+            );
+
+        float t = 0f;
+
+        while (t < data.moveDuration)
         {
             t += Time.unscaledDeltaTime;
-            float lerp = Mathf.Clamp01(t / time);
+            float lerp = t / data.moveDuration;
 
-            cam.localPosition =
-                Vector3.Lerp(startLocalPos, targetLocalPos, lerp);
-
-            // LookAt bằng WORLD SPACE
-            Vector3 dir = lookTarget.position - cam.position;
-            cam.rotation = Quaternion.LookRotation(dir, Vector3.up);
+            camTf.position = Vector3.Lerp(startPos, targetWorldPos, lerp);
+            camTf.rotation = Quaternion.Slerp(startRot, targetRot, lerp);
 
             yield return null;
         }
+
+        camTf.position = targetWorldPos;
+        camTf.rotation = targetRot;
+
+        binding.onArrived?.Invoke();
     }
 }

@@ -223,7 +223,7 @@ MonoBehaviour:
   endA: -10
   endB: 10
   PivotCube: {fileID: 0}
-  id: 
+  id: M2
   background: {fileID: 0}
   type: 26
 --- !u!1 &156186035

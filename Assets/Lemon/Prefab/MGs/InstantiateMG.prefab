@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SummonSystem
   summonEntries:
-  - prefab: {fileID: 0}
-    particle: {fileID: 0}
-    spawnPosition: {x: 0, y: 0, z: 0}
+  - prefab: {fileID: 3883437276024975087, guid: c396fff5081a7b2479143103ca6e6e2c, type: 3}
+    particle: {fileID: 4809171458859421548, guid: 4e91ed1a8efe7044785b9bd97a47d87f, type: 3}
+    spawnPosition: {x: -26.62, y: -41.11, z: 50.24}
     hasSummoned: 0

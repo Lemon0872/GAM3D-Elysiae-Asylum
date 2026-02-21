@@ -7,6 +7,7 @@ public class CubeGlow : MonoBehaviour
     public Color emissionColor = Color.white; // hoặc màu gốc
 
     public Renderer rend;
+    private bool isGlowSound;
 
     void Awake()
     {
@@ -24,12 +25,18 @@ public class CubeGlow : MonoBehaviour
         isGlowing = state;
 
         if (isGlowing)
+        {
+            if (!isGlowSound)
             {
-        rend.material.EnableKeyword("_EMISSION");
-        rend.material.SetColor("_EmissionColor", emissionColor * emissionIntensity);
+                AudioManager.PlaySFXAt("Cube[HSR]Glow", transform.position);
+                isGlowSound=true;
+            } 
+            rend.material.EnableKeyword("_EMISSION");
+            rend.material.SetColor("_EmissionColor", emissionColor * emissionIntensity);
         }
         else
         {
+            isGlowSound=false;
             rend.material.SetColor("_EmissionColor", Color.black);
             rend.material.DisableKeyword("_EMISSION");
         }
