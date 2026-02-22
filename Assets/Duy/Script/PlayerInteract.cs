@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour {
     public float interactRange =3f;
+
+    void Start()
+    {
+        MouseLock();
+        Debug.Log("da lock");
+    }
+
+    private void MouseUnLock()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void MouseLock()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     private void Update() 
     {
@@ -14,6 +33,7 @@ public class PlayerInteract : MonoBehaviour {
                 interactable.Interact(transform);
             }
         }
+        if(Input.GetMouseButtonDown(2)) MouseUnLock();
     }
 
     public IInteractable GetInteractableObject() 
@@ -44,5 +64,4 @@ public class PlayerInteract : MonoBehaviour {
 
         return closestInteractable;
     }
-
 }

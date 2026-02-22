@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;   
 using System.Collections;
 using System.Collections.Generic;
 
 public class HammerController : MonoBehaviour
 {
+    [Header("Hammer Settings")]
     public float hitAngle = 30f;
     public float hitDuration = 0.2f;
     public float returnSpeed = 5f;
@@ -12,13 +14,17 @@ public class HammerController : MonoBehaviour
     private Quaternion originalRotation;
     private bool isHitting = false;
 
-    private InputAction wackAction;
+    [Header("Input Actions")]
+    [SerializeField] private InputActionAsset inputActions;      private InputAction wackAction;
+
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI messageText;     
 
     void Awake()
     {
-        // Tạo action map và lấy action "Wack"
-        var inputActionAsset = new Hammer();
-        wackAction = inputActionAsset.HammerControl.Wack;
+        var actionMap = inputActions.FindActionMap("HammerControl", throwIfNotFound: true);
+        wackAction = actionMap.FindAction("Wack", throwIfNotFound: true);
+
         wackAction.performed += ctx => OnWack();
     }
 
@@ -37,6 +43,18 @@ public class HammerController : MonoBehaviour
         originalRotation = transform.localRotation;
     }
 
+    public void ShowMessage(string msg)
+    {
+        if (messageText != null)
+        {
+            messageText.text = msg;
+        }
+        else
+        {
+            Debug.LogWarning("Chưa gán TextMeshProUGUI vào HammerController!");
+        }
+    }
+
     private void OnWack()
     {
         if (!isHitting)
@@ -49,14 +67,13 @@ public class HammerController : MonoBehaviour
                 Mole mole = hit.collider.GetComponent<Mole>();
                 if (mole != null)
                 {
-                    mole.OnHit(); // xử lý chính
+                    mole.OnHit();
 
                     if (mole.hasLetter)
                     {
                         char letter = mole.letter;
-                        Debug.Log("✅ Đã nhận ký tự: " + letter);
+                        ShowMessage("Đã nhận ký tự: " + letter);
 
-                        // Tính toán các ký tự còn lại
                         string target = GameManager.Instance.targetWord;
                         List<char> collected = GameManager.Instance.collectedLetters;
                         List<char> remaining = new List<char>();
@@ -70,25 +87,24 @@ public class HammerController : MonoBehaviour
                         }
 
                         string remainingStr = string.Join(", ", remaining);
-                        Debug.Log("🔤 Còn lại các ký tự: " + remainingStr);
+                        ShowMessage("Còn lại các ký tự: " + remainingStr);
                     }
                     else
                     {
-                        Debug.Log("💥 Đã đập mole không có chữ cái");
+                        ShowMessage("Đã đánh trúng mole không có chữ cái");
                     }
                 }
                 else
                 {
-                    Debug.Log("❌ Raycast trúng vật thể không phải mole: " + hit.collider.name);
+                    ShowMessage("Đã đánh trúng vật thể không phải mole: " + hit.collider.name);
                 }
             }
             else
             {
-                Debug.Log("⚠️ Không trúng gì cả khi raycast");
+                ShowMessage("Không đánh trúng gì cả");
             }
         }
     }
-
 
     IEnumerator HitRoutine()
     {
@@ -101,14 +117,15 @@ public class HammerController : MonoBehaviour
 
         while (Quaternion.Angle(transform.localRotation, originalRotation) > 0.1f)
         {
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, originalRotation, Time.deltaTime * returnSpeed);
+            transform.localRotation = Quaternion.Lerp(
+                transform.localRotation,
+                originalRotation,
+                Time.deltaTime * returnSpeed
+            );
             yield return null;
         }
-        
+
         transform.localRotation = originalRotation;
-        Debug.Log("đã trở về");
         isHitting = false;
     }
-
-
 }

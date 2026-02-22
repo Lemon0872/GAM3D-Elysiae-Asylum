@@ -5,6 +5,8 @@ using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    [SerializeField] private HammerController hammerController;
+    [SerializeField] private MoleSpawner moleSpawner;
 
     [Header("Target Word Settings")]
     public string targetWord = "UNITY";   // từ khóa cần ghép
@@ -17,6 +19,14 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    public void Notify(string msg)
+    {
+        if (hammerController != null)
+        {
+            hammerController.ShowMessage(msg);
+        }
     }
 
     public void CollectLetter(char letter)
@@ -65,5 +75,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level Complete! You collected the word: " + targetWord);
         // TODO: load scene mới hoặc hiện UI thắng
+        Notify("Level Complete! You collected the word: " + targetWord);
+        if (moleSpawner != null)
+        {
+            moleSpawner.HandleLevelComplete();
+        }
     }
 }
