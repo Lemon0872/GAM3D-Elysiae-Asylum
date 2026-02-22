@@ -53,6 +53,7 @@ public class AudioSettingsUI : MonoBehaviour
             {
                 animator.SetBool("IsClose",false);
                 panelSetting.SetActive(true);
+                
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Time.timeScale = 0f;
@@ -60,6 +61,7 @@ public class AudioSettingsUI : MonoBehaviour
             else
             {
                 animator.SetBool("IsClose",true);
+                
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 Time.timeScale = 1f;

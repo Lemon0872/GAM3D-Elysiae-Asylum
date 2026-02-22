@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     //AudioManager.PlayMusic("[tên scriptable music]");
     //AudioManager.PlaySFXAt("[tên scriptable SFX]", [vector3 vị trí phát]);
     public static AudioManager Instance;
-
     [SerializeField] AudioDatabase database;
-
     SFXChannel sfx;
     MusicChannel music;
     AudioSourcePool pool;
+
+    [Header("Snapshots")]
+    public AudioMixerSnapshot normalSnapshot;
+    public AudioMixerSnapshot uiFocusSnapshot;
+
+    [Header("Settings")]
+    public float transitionTime = 0.5f;
 
     void Awake()
     {
@@ -35,4 +41,13 @@ public class AudioManager : MonoBehaviour
 
     public static void PlayMusic(string id)
         => Instance.music.Play(id);
+    public void EnterUIFocus()
+    {
+        uiFocusSnapshot.TransitionTo(transitionTime);
+    }
+
+    public void ExitUIFocus()
+    {
+        normalSnapshot.TransitionTo(transitionTime);
+    }
 }

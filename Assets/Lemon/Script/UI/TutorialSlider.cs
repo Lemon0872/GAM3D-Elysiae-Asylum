@@ -11,7 +11,7 @@ public class TutorialSlider : MonoBehaviour
     [SerializeField] private CanvasGroup tutorialCanvasGroup;
 
     [Header("Settings")]
-    [SerializeField] private float fadeDuration = 0.3f;
+    [SerializeField] private float fadeDuration = 0.2f;
     [SerializeField] private KeyCode nextKey = KeyCode.E;
     [SerializeField] private KeyCode prevKey = KeyCode.Q;
 
@@ -49,6 +49,7 @@ public class TutorialSlider : MonoBehaviour
     {
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
+        AudioManager.Instance.EnterUIFocus();
     }
     void Update()
     {
@@ -277,12 +278,14 @@ public class TutorialSlider : MonoBehaviour
     // ===============================
     public void ShowTutorial()
     {
+        AudioManager.Instance.EnterUIFocus();
         tutorialCanvasGroup.gameObject.SetActive(true);
         LeanTween.alphaCanvas(tutorialCanvasGroup, 1, fadeDuration);
     }
 
     public void HideTutorial()
     {
+        AudioManager.Instance.ExitUIFocus();
         LeanTween.alphaCanvas(tutorialCanvasGroup, 0, fadeDuration)
                  .setOnComplete(() =>
                  {
