@@ -70,7 +70,7 @@ MonoBehaviour:
           iconNameOrGuid: Terrain Icon
           isIconRecursive: 0
           isColorRecursive: 0
-        - colorIndex: 0
+        - colorIndex: 4
           iconNameOrGuid: AvatarMask On Icon
           isIconRecursive: 0
           isColorRecursive: 0

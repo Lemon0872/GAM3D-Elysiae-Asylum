@@ -317,9 +317,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3626912492978032021}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -701627713671670573}
   m_SourcePrefab: {fileID: 100100000, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
 --- !u!4 &6954655661334036516 stripped
 Transform:
@@ -442,19 +439,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399152570566c9c4eb03aebedf6b348e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AgentSnapToNavMesh
-  snapRadius: 2
-  groundCheckVelocity: 0.1
---- !u!114 &-701627713671670573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7185496384429419462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399152570566c9c4eb03aebedf6b348e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AgentNavMeshHandler
   snapRadius: 2
   groundCheckVelocity: 0.1

@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class PedestalEquip : MonoBehaviour
+public class PedestalEquip : MonoBehaviour,IInteractable
 {
     [Header("References")]
     [SerializeField] private Transform player;          // Player transform
     [SerializeField] private GameObject pedestalStick;  // Stick trên bệ
     [SerializeField] private GameObject playerStick;    // Stick trên player
     [SerializeField] private Canvas promptCanvas;       // Canvas con của bệ
+    [SerializeField] private string interactText;
 
     [Header("Settings")]
     [SerializeField] private float detectDistance = 3f; // khoảng cách để hiện prompt
@@ -40,14 +41,9 @@ public class PedestalEquip : MonoBehaviour
                 promptCanvas.enabled = false;
             playerInRange = false;
         }
-
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
-        {
-            ToggleStick();
-        }
     }
 
-    private void ToggleStick()
+    public void ToggleStick()
     {
         bool playerHasStick = playerStick.activeSelf;
 
@@ -68,5 +64,20 @@ public class PedestalEquip : MonoBehaviour
 
         if (promptCanvas != null)
             promptCanvas.enabled = false;
+    }
+
+    public void Interact(Transform interactorTransform)
+    {
+        ToggleStick();
+    }
+
+    public string GetInteractText()
+    {
+        return interactText;
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }

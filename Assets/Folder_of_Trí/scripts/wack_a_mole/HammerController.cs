@@ -10,7 +10,7 @@ public class HammerController : MonoBehaviour
     public float hitAngle = 30f;
     public float hitDuration = 0.2f;
     public float returnSpeed = 5f;
-
+    
     private Quaternion originalRotation;
     private bool isHitting = false;
 
