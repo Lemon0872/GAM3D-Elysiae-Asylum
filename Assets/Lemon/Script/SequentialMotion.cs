@@ -73,6 +73,7 @@ public class SequentialMotion : MonoBehaviour
         // ===== MOVE =====
         if (phase.useMove)
         {
+            Debug.Log("dang di chuyen");
             Vector3 target = basePos + phase.moveOffset;
 
             LeanTween.move(gameObject, target, phase.moveTime)
@@ -82,6 +83,7 @@ public class SequentialMotion : MonoBehaviour
         // ===== ROTATE =====
         if (phase.useRotate)
         {
+            Debug.Log("dang xoay");
             Vector3 axis = phase.rotateAxis.normalized;
             float targetAngle = phase.rotateAngle;
 

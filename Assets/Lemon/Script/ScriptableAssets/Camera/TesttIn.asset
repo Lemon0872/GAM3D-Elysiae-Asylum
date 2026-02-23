@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TesttIn
   m_EditorClassIdentifier: Assembly-CSharp::CameraCutsceneData
   mode: 0
-  offset: {x: 5, y: 2, z: -5}
-  renderDuration: 5
+  offset: {x: 5, y: 2, z: 1}
+  moveDuration: 2
   moveTime: 1

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3272039660789243118}
   - component: {fileID: 2505013236679182953}
-  - component: {fileID: 2927024843420084743}
   m_Layer: 0
   m_Name: AudioMG
   m_TagString: Untagged
@@ -46,11 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   database: {fileID: 11400000, guid: 9b94980dfb28c334eb500d06a0058369, type: 2}
---- !u!81 &2927024843420084743
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464487707156120633}
-  m_Enabled: 1
+  normalSnapshot: {fileID: 0}
+  uiFocusSnapshot: {fileID: 0}
+  transitionTime: 0.5

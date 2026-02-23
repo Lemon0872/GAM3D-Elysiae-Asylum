@@ -51,6 +51,12 @@ public class TutorialSlider : MonoBehaviour
         previousButton.onClick.AddListener(PreviousPage);
         AudioManager.Instance.EnterUIFocus();
     }
+    void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     void Update()
     {
         if (isTransitioning) return;
@@ -281,6 +287,8 @@ public class TutorialSlider : MonoBehaviour
         AudioManager.Instance.EnterUIFocus();
         tutorialCanvasGroup.gameObject.SetActive(true);
         LeanTween.alphaCanvas(tutorialCanvasGroup, 1, fadeDuration);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void HideTutorial()
@@ -290,6 +298,8 @@ public class TutorialSlider : MonoBehaviour
                  .setOnComplete(() =>
                  {
                      tutorialCanvasGroup.gameObject.SetActive(false);
+                     Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                  });
     }
 }
