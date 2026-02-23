@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6298452787526455242}
   - component: {fileID: 8965432155906541683}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: PenguinManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2931b8d0e4825224eadc6dfb048f9a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoleSpawner
-  molePrefab: {fileID: 0}
-  spawnCenter: {x: 3, y: -2, z: -2}
+  molePrefab: {fileID: 7185496384429419462, guid: db0b86b2e99d1954e861e61be43ac0d0, type: 3}
+  spawnCenter: {x: 3, y: 5, z: -2}
   spawnRange: {x: 15, y: 5, z: 15}
   spawnInterval: 2
   maxMoles: 4
+  specialSpawnCount: 10
+  finalPrefab: {fileID: 646540080323554130, guid: 9c0f5d1efa38ae3478b1bcb4a135b4fd, type: 3}
+  spawnSound: {fileID: 11400000, guid: 709a6c06ba97bf04982e2b6674342245, type: 2}
+  audioSource: {fileID: 0}
 --- !u!114 &8965432155906541683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252013508eb557c4493cb48dac622087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  targetWord: UNITY
+  hammerController: {fileID: 0}
+  moleSpawner: {fileID: 6298452787526455242}
+  targetWord: UIA
   collectedLetters: 
   score: 0
