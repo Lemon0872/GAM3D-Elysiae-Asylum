@@ -305,6 +305,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7863834764062854240}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6116802584886586379}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3109347854926227117}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -667132649227026302}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3626912492978032021}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -701627713671670573}
   m_SourcePrefab: {fileID: 100100000, guid: 2afc5ca06f66c3f4d9e10c3c96833254, type: 3}
 --- !u!4 &6954655661334036516 stripped
 Transform:
@@ -352,3 +367,94 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.83179545, y: 1.3464146, z: 1}
   m_Center: {x: -0.08410227, y: 0.64467716, z: 0}
+--- !u!54 &6116802584886586379
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185496384429419462}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &3109347854926227117
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185496384429419462}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-667132649227026302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185496384429419462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bfa7ee28a407f41b1dd42c13866cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomDirectionMovement
+  moveDistance: 5
+  idleTime: 0.5
+--- !u!114 &-3626912492978032021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185496384429419462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399152570566c9c4eb03aebedf6b348e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AgentSnapToNavMesh
+  snapRadius: 2
+  groundCheckVelocity: 0.1
+--- !u!114 &-701627713671670573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185496384429419462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399152570566c9c4eb03aebedf6b348e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AgentNavMeshHandler
+  snapRadius: 2
+  groundCheckVelocity: 0.1
