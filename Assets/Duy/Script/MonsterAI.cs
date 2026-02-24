@@ -14,6 +14,11 @@ public class MonsterAI : MonoBehaviour
     public string roarAnimName = "Roar";
     public AudioClip roarClip;
     public float disappearDelay = 2.5f;
+    [Header("Vision Settings")]
+    public Camera playerCamera;
+    [Range(0.5f, 0.99f)]
+    public float viewDotThreshold = 0.85f;
+    public float maxViewDistance = 40f;
 
     void Start()
     {
@@ -33,26 +38,35 @@ public class MonsterAI : MonoBehaviour
 
     bool IsPlayerLookingAtMe()
     {
-        Camera cam = Camera.main;
-        if (cam == null) return false;
+        if (playerCamera == null)
+        {
+            Debug.LogWarning("MonsterAI: No camera assigned!");
+            return false;
+        }
 
-        Vector3 viewportPoint = cam.WorldToViewportPoint(transform.position);
+        Vector3 camPos = playerCamera.transform.position;
+        Vector3 directionToMonster = (transform.position - camPos).normalized;
 
-        // In front of camera
-        if (viewportPoint.z <= 0f) return false;
-
-        // Inside screen
-        if (viewportPoint.x < 0f || viewportPoint.x > 1f ||
-            viewportPoint.y < 0f || viewportPoint.y > 1f)
+        float distance = Vector3.Distance(camPos, transform.position);
+        if (distance > maxViewDistance)
             return false;
 
-        // Line of sight
-        Vector3 dir = (transform.position - cam.transform.position).normalized;
+        float dot = Vector3.Dot(playerCamera.transform.forward, directionToMonster);
 
-        if (Physics.Raycast(cam.transform.position, dir, out RaycastHit hit, 100f))
+        Debug.Log("Dot value: " + dot);
+
+        if (dot < viewDotThreshold)
+            return false;
+
+        if (Physics.Raycast(camPos, directionToMonster, out RaycastHit hit, maxViewDistance))
         {
+            Debug.Log("Raycast hit: " + hit.transform.name);
+
             if (hit.transform.root == transform)
+            {
+                Debug.Log("PLAYER IS LOOKING AT MONSTER");
                 return true;
+            }
         }
 
         return false;
