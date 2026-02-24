@@ -49530,8 +49530,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 16.591064, y: 1, z: 42.220932}
-  m_Center: {x: -0.0234375, y: 0, z: -1.1485252}
+  m_Size: {x: 16.591064, y: 1.59, z: 42.220932}
+  m_Center: {x: -0.0234375, y: 0.96, z: -1.1485252}
 --- !u!114 &693483077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52067,7 +52067,7 @@ Transform:
   m_GameObject: {fileID: 726987704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.838997, y: -33.9719, z: 8.668846}
+  m_LocalPosition: {x: 178.2185, y: -38.59375, z: -10.91292}
   m_LocalScale: {x: 1.1485, y: 1.1485, z: 1.1485}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -92774,7 +92774,7 @@ MeshCollider:
   m_Mesh: {fileID: -1103882761297548365, guid: 8d6939c3db4dac04683acac328818ad5, type: 3}
 --- !u!4 &1312909771 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7819979246067120329, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5451901109201282299, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
   m_PrefabInstance: {fileID: 1430586869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314136152
@@ -97708,15 +97708,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.94
+      value: 178.3195
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -38.2139
+      value: -42.83575
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.466846
+      value: -11.11492
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -108598,7 +108598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1570265645
 Transform:
   m_ObjectHideFlags: 0
@@ -110396,7 +110396,7 @@ Transform:
   m_GameObject: {fileID: 1595823283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.838997, y: -33.9719, z: 8.668846}
+  m_LocalPosition: {x: 178.2185, y: -38.59375, z: -10.91292}
   m_LocalScale: {x: 0.57425, y: 0.57425, z: 0.57425}
   m_ConstrainProportionsScale: 1
   m_Children:

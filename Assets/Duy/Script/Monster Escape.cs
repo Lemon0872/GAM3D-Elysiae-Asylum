@@ -13,6 +13,7 @@ public class MonsterEscape : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Chammmm");
         if (hasTriggered)
         {
             Debug.Log("[TriggerZone] Already triggered. Ignoring.");
