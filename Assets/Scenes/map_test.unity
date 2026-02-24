@@ -55234,19 +55234,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 906951183}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96.722305
+      value: 152.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -49.20899
+      value: -43.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.281773
+      value: 2.6399994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55606,7 +55606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_TagString
@@ -67624,7 +67624,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 693483075}
-  - {fileID: 1342768558}
   - {fileID: 2062105245}
   - {fileID: 1452002756}
   - {fileID: 612529734}
@@ -94200,9 +94199,6 @@ MonoBehaviour:
   roarAnimName: Roar
   roarClip: {fileID: 8300000, guid: 99087ad4bca5bb64091d679115651571, type: 3}
   disappearDelay: 5
-  playerCamera: {fileID: 0}
-  viewDotThreshold: 0.85
-  maxViewDistance: 40
   audioSource: {fileID: 1342768553}
   footstepClips:
   - {fileID: 8300000, guid: 46fa411592206f74a80fa8a6a56bb74e, type: 3}
@@ -94252,11 +94248,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!4 &1342768558 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
-  m_PrefabInstance: {fileID: 758820782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1344484517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148705,6 +148696,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 132679308}
   - {fileID: 1763806259}
+  - {fileID: 758820782}
   - {fileID: 906951183}
   - {fileID: 1570265645}
   - {fileID: 1816891856}

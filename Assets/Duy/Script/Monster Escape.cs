@@ -11,7 +11,7 @@ public class MonsterEscape : MonoBehaviour
 
     private bool hasTriggered = false;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (hasTriggered)
         {
