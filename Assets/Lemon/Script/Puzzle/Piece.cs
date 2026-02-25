@@ -1,62 +1,112 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
-    [Header("Data")]
-    public PieceShapeData shapeData;
-
-    [Header("Reference")]
-    public GameObject cellPrefab;
-    private Vector2Int pivotCell;
-    public bool IsPlaced { get; private set; }
-    public Vector2Int CurrentGridPos { get; private set; }
+    public List<PieceCell> cells = new List<PieceCell>();
+    public PieceCell pivotCell;
+    public static Piece SelectedPiece;
+    private Vector3 dragOffset;
+    private bool isDragging;
 
     void Start()
     {
-        BuildPiece();
+        cells.AddRange(GetComponentsInChildren<PieceCell>());
     }
 
-    void BuildPiece()
+    void Update()
     {
-        if (shapeData == null) return;
-
-        pivotCell = shapeData.cells[shapeData.pivotIndex];
-
-        foreach (Vector2Int cell in shapeData.cells)
+        if (SelectedPiece == this && Input.GetKeyDown(KeyCode.R))
         {
-            Vector2Int localPos = cell - pivotCell;
+            RotatePiece();
+            
+        }
+    }
 
-            GameObject cellObj = Instantiate(cellPrefab, transform);
+    void OnMouseDown()
+    {
+        SelectedPiece = this;
+        isDragging = true;
+        dragOffset = transform.position - GetMouseWorld();
+        ClearAllSlots();
+    }
 
-            cellObj.transform.localPosition = new Vector3(
-                localPos.x,
-                localPos.y,
-                0f
+    void OnMouseDrag()
+    {
+        if (!isDragging) return;
+        transform.position = GetMouseWorld() + dragOffset;
+    }
+
+    void OnMouseUp()
+    {
+        isDragging = false;
+        TrySnap();
+    }
+
+    Vector3 GetMouseWorld()
+    {
+        Vector3 mouse = Input.mousePosition;
+        mouse.z = 10f;
+        return Camera.main.ScreenToWorldPoint(mouse);
+    }
+
+    void RotatePiece()
+    {
+        ClearAllSlots();
+        transform.RotateAround(
+            pivotCell.transform.position,
+            Vector3.forward,
+            -90f
+        );
+        TrySnap();
+    }
+
+    void TrySnap()
+    {
+        BoardSlot closest =
+            BoardManager.Instance.GetClosestSlot(
+                pivotCell.transform.position
             );
-        }
+
+        if (closest == null)
+            return;
+
+        Vector3 offset =
+            closest.transform.position -
+            pivotCell.transform.position;
+
+        transform.position += offset;
+
+        OccupySlots();
+        BoardManager.Instance.CheckWin();
     }
 
-    // Lấy tất cả cell đang chiếm sau khi snap
-    public Vector2Int[] GetOccupiedCells(Vector2Int gridPosition)
+    void OccupySlots()
     {
-        Vector2Int[] result = new Vector2Int[shapeData.cells.Length];
-
-        for (int i = 0; i < shapeData.cells.Length; i++)
+        foreach (var cell in cells)
         {
-            result[i] = gridPosition + (shapeData.cells[i] - pivotCell);
+            BoardSlot slot =
+                BoardManager.Instance.GetClosestSlot(
+                    cell.transform.position
+                );
+
+            if (slot != null)
+            {
+                cell.currentSlot = slot;
+                slot.SetOccupied(cell);
+            }
         }
-
-        return result;
-    }
-    
-    public void SetPlacedPosition(Vector2Int gridPos)
-    {
-        CurrentGridPos = gridPos;
-        IsPlaced = true;
     }
 
-    public void SetUnplaced()
+    void ClearAllSlots()
     {
-        IsPlaced = false;
+        foreach (var cell in cells)
+        {
+            if (cell.currentSlot != null)
+            {
+                cell.currentSlot.Clear();
+                cell.currentSlot = null;
+            }
+        }
     }
 }

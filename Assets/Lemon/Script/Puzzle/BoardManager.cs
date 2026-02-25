@@ -1,177 +1,129 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
-    [Header("Board Size (Square)")]
-    public int size = 4;
+    public static BoardManager Instance;
 
-    [Header("Required Cells Per Row")]
-    public int[] requiredPerRow;
+    [Header("Board Settings")]
+    [Range(4, 6)]
+    public int boardSize = 4;
+    public float cellSize = 1f;
+    public float snapDistance = 0.5f;
 
-    [Header("Required Cells Per Column")]
-    public int[] requiredPerColumn;
+    [Header("Win Condition")]
+    public List<string> requiredSlotIDs = new List<string>();
 
-    private bool[,] occupied;
+    private Dictionary<string, BoardSlot> slotDictionary =
+        new Dictionary<string, BoardSlot>();
 
-    float OriginOffset => -size / 2f;
+    private List<BoardSlot> requiredSlots =
+        new List<BoardSlot>();
 
-    void Awake()
+    private void Awake()
     {
-        occupied = new bool[size, size];
+        Instance = this;
+        GenerateBoard();
+        CacheRequiredSlots();
     }
 
-#if UNITY_EDITOR
-    void OnValidate()
+    void GenerateBoard()
     {
-        if (size < 1) size = 1;
+        slotDictionary.Clear();
 
-        ResizeArray(ref requiredPerRow);
-        ResizeArray(ref requiredPerColumn);
-    }
+        float half = (boardSize - 1) * cellSize * 0.5f;
 
-    void ResizeArray(ref int[] array)
-    {
-        if (array == null || array.Length != size)
+        for (int row = 0; row < boardSize; row++)
         {
-            int[] newArray = new int[size];
-
-            if (array != null)
+            for (int col = 0; col < boardSize; col++)
             {
-                for (int i = 0; i < Mathf.Min(array.Length, size); i++)
-                    newArray[i] = array[i];
+                string id = $"{(char)('A' + col)}{row + 1}";
+
+                GameObject slotObj = new GameObject(id);
+                slotObj.transform.parent = transform;
+
+                float x = col * cellSize - half;
+                float y = -row * cellSize + half;
+
+                slotObj.transform.localPosition = new Vector3(x, y, 0);
+
+                BoardSlot slot = slotObj.AddComponent<BoardSlot>();
+                slot.Initialize(id);
+
+                slotDictionary.Add(id, slot);
             }
-
-            array = newArray;
         }
     }
+
+    void CacheRequiredSlots()
+    {
+        requiredSlots.Clear();
+
+        foreach (var id in requiredSlotIDs)
+        {
+            if (slotDictionary.TryGetValue(id, out BoardSlot slot))
+            {
+                requiredSlots.Add(slot);
+                slot.isRequired = true;
+            }
+        }
+    }
+
+    public BoardSlot GetClosestSlot(Vector3 worldPos)
+    {
+        float minDist = snapDistance;
+        BoardSlot closest = null;
+
+        foreach (var slot in slotDictionary.Values)
+        {
+            float dist = Vector3.Distance(worldPos, slot.transform.position);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                closest = slot;
+            }
+        }
+
+        return closest;
+    }
+
+    public void CheckWin()
+    {
+        Debug.Log("thuc hien checkwin");
+        foreach (var slot in requiredSlots)
+        {
+            if (!slot.IsOccupied())
+                return;
+        }
+
+        Debug.Log("LEVEL COMPLETE");
+    }
+    #if UNITY_EDITOR
+void OnDrawGizmos()
+{
+    Gizmos.color = Color.aquamarine;
+
+    float totalSize = boardSize * cellSize;
+    float half = totalSize * 0.5f;
+
+    Vector3 origin = transform.position - 
+                     new Vector3(half, -half, 0);
+
+    // Dọc
+    for (int col = 0; col <= boardSize; col++)
+    {
+        Vector3 start = origin + new Vector3(col * cellSize, 0, 0);
+        Vector3 end = start + new Vector3(0, -totalSize, 0);
+        Gizmos.DrawLine(start, end);
+    }
+
+    // Ngang
+    for (int row = 0; row <= boardSize; row++)
+    {
+        Vector3 start = origin + new Vector3(0, -row * cellSize, 0);
+        Vector3 end = start + new Vector3(totalSize, 0, 0);
+        Gizmos.DrawLine(start, end);
+    }
+}
 #endif
-
-    // =========================
-    // WORLD → GRID
-    // =========================
-    public Vector2Int WorldToGrid(Vector3 worldPos)
-    {
-        float x = worldPos.x - OriginOffset;
-        float y = worldPos.y - OriginOffset;
-
-        return new Vector2Int(
-            Mathf.FloorToInt(x),
-            Mathf.FloorToInt(y)
-        );
-    }
-
-    // =========================
-    // GRID → WORLD
-    // =========================
-    public Vector3 GridToWorld(Vector2Int gridPos)
-    {
-        float x = gridPos.x + OriginOffset + 0.5f;
-        float y = gridPos.y + OriginOffset + 0.5f;
-
-        return new Vector3(x, y, 0f);
-    }
-
-    public bool IsInsideBoard(Vector2Int gridPos)
-    {
-        return gridPos.x >= 0 &&
-               gridPos.y >= 0 &&
-               gridPos.x < size &&
-               gridPos.y < size;
-    }
-
-    public bool CanPlace(Piece piece, Vector2Int gridPos)
-    {
-        var cells = piece.GetOccupiedCells(gridPos);
-
-        foreach (var cell in cells)
-        {
-            if (!IsInsideBoard(cell))
-                return false;
-
-            if (occupied[cell.x, cell.y])
-                return false;
-        }
-
-        return true;
-    }
-
-    public void PlacePiece(Piece piece, Vector2Int gridPos)
-    {
-        var cells = piece.GetOccupiedCells(gridPos);
-
-        foreach (var cell in cells)
-            occupied[cell.x, cell.y] = true;
-
-        piece.transform.position = GridToWorld(gridPos);
-        piece.SetPlacedPosition(gridPos);
-
-        CheckWin();
-    }
-
-    public void RemovePiece(Piece piece)
-    {
-        if (!piece.IsPlaced)
-            return;
-
-        var cells = piece.GetOccupiedCells(piece.CurrentGridPos);
-
-        foreach (var cell in cells)
-            occupied[cell.x, cell.y] = false;
-    }
-
-    // =========================
-    // CHECK WIN CONDITION
-    // =========================
-    void CheckWin()
-    {
-        // Check rows
-        for (int y = 0; y < size; y++)
-        {
-            int count = 0;
-            for (int x = 0; x < size; x++)
-                if (occupied[x, y]) count++;
-
-            if (count != requiredPerRow[y])
-                return;
-        }
-
-        // Check columns
-        for (int x = 0; x < size; x++)
-        {
-            int count = 0;
-            for (int y = 0; y < size; y++)
-                if (occupied[x, y]) count++;
-
-            if (count != requiredPerColumn[x])
-                return;
-        }
-
-        Debug.Log("WIN!");
-    }
-    // void OnDrawGizmos()
-    // {
-    //     Gizmos.color = Color.white;
-
-    //     float originOffset = -size / 2f;
-
-    //     for (int x = 0; x <= size; x++)
-    //     {
-    //         float xPos = originOffset + x;
-
-    //         Gizmos.DrawLine(
-    //             new Vector3(xPos, originOffset, 0),
-    //             new Vector3(xPos, originOffset + size, 0)
-    //         );
-    //     }
-
-    //     for (int y = 0; y <= size; y++)
-    //     {
-    //         float yPos = originOffset + y;
-
-    //         Gizmos.DrawLine(
-    //             new Vector3(originOffset, yPos, 0),
-    //             new Vector3(originOffset + size, yPos, 0)
-    //         );
-    //     }
-    // }
 }
