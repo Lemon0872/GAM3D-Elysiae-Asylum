@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardManager : MonoBehaviour
 {
@@ -10,16 +11,22 @@ public class BoardManager : MonoBehaviour
     public int boardSize = 4;
     public float cellSize = 1f;
     public float snapDistance = 0.5f;
+    public int[] rowCounts;
+    public SegmentedBar[] rowContain;
+    public int[] colCounts;
+    public SegmentedBar[] colContain;
+
+    [Header("Limit")]
+    [SerializeField] private int[] rowLimits;
+    [SerializeField] private int[] colLimits;
 
     [Header("Win Condition")]
     public List<string> requiredSlotIDs = new List<string>();
-
     private Dictionary<string, BoardSlot> slotDictionary =
         new Dictionary<string, BoardSlot>();
-
     private List<BoardSlot> requiredSlots =
         new List<BoardSlot>();
-
+    [SerializeField] private List<Piece> pieces;
     private void Awake()
     {
         Instance = this;
@@ -51,6 +58,64 @@ public class BoardManager : MonoBehaviour
                 slot.Initialize(id);
 
                 slotDictionary.Add(id, slot);
+            }
+        }
+        rowCounts = new int[boardSize];
+        colCounts = new int[boardSize];
+    }
+    public void RecalculateCounts()
+    {
+        // reset
+        for (int i = 0; i < boardSize; i++)
+        {
+            rowCounts[i] = 0;
+            colCounts[i] = 0;
+        }
+
+        foreach (var slot in slotDictionary.Values)
+        {
+            if (!slot.IsOccupied())
+                continue;
+
+            // ID ví dụ: "B3"
+            char colChar = slot.ID[0];
+            int rowNumber = int.Parse(slot.ID.Substring(1));
+
+            int colIndex = colChar - 'A';
+            int rowIndex = rowNumber - 1;
+
+            rowCounts[rowIndex]++;
+            colCounts[colIndex]++;
+        }
+        
+        for (int i = 0; i < boardSize; i++)
+        {
+            rowContain[i].SetValue(rowCounts[i]);
+            colContain[i].SetValue(colCounts[i]);
+        }
+        CheckLimitOverflow();
+    }
+    void CheckLimitOverflow()
+    {
+        for (int i = 0; i < rowCounts.Length; i++)
+        {
+            bool overflow = rowCounts[i] > rowLimits[i];
+
+            foreach (var img in rowContain[i].segments)
+            {
+                img.GetComponent<Image>().color =
+                    overflow ? Color.red : Color.white;
+            }
+        }
+
+        for (int i = 0; i < colCounts.Length; i++)
+        {
+            bool overflow = colCounts[i] > colLimits[i];
+
+            foreach (var img in colContain[i].segments)
+            {
+                img.GetComponent<Image>().color =
+                    overflow ? Color.red : Color.white;
             }
         }
     }
@@ -95,7 +160,17 @@ public class BoardManager : MonoBehaviour
             if (!slot.IsOccupied())
                 return;
         }
-
+        foreach (var piece in pieces)
+        {
+            foreach (var cell in piece.cells)
+            {
+                var sprite = cell.gameObject.GetComponent<SpriteRenderer>();
+                if (sprite != null)
+                {
+                    sprite.color=Color.green;
+                }
+            }
+        }
         Debug.Log("LEVEL COMPLETE");
     }
     #if UNITY_EDITOR
