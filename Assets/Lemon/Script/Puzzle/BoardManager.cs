@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +29,7 @@ public class BoardManager : MonoBehaviour
     private List<BoardSlot> requiredSlots =
         new List<BoardSlot>();
     [SerializeField] private List<Piece> pieces;
+    [SerializeField] private GameObject mask;
     private void Awake()
     {
         Instance = this;
@@ -164,17 +167,27 @@ public class BoardManager : MonoBehaviour
         {
             foreach (var cell in piece.cells)
             {
-                var sprite = cell.gameObject.GetComponent<SpriteRenderer>();
+                var sprite = cell.GetComponent<SpriteRenderer>();
                 if (sprite != null)
                 {
-                    sprite.color=Color.green;
+                    LeanTween.color(sprite.gameObject, Color.green, 0.3f)
+                    .setEaseOutQuad().setOnComplete(() =>
+                    {
+                        StartCoroutine(CoolWin());
+                    });
                 }
             }
         }
         Debug.Log("LEVEL COMPLETE");
     }
-    #if UNITY_EDITOR
-void OnDrawGizmos()
+
+    IEnumerator CoolWin()
+    {
+        yield return new WaitForSeconds(2f);
+        mask.SetActive(true);
+    }
+#if UNITY_EDITOR
+    void OnDrawGizmos()
 {
     Gizmos.color = Color.aquamarine;
 
