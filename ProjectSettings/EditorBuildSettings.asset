@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Lemon/Scenes/CubeHSR[3x3]/N 2.unity
     guid: 5d71de4cb3259e8418e06de20be210c9
   - enabled: 1
+    path: Assets/Lemon/Scenes/Puzzle[A9]/4x4/A 0.unity
+    guid: 4e5ce31cafa12204e955b5b0cfe07ae3
+  - enabled: 1
     path: Assets/Lemon/Scenes/MaganicCube.unity
     guid: 936d0702d3df2574ab019474325a29bc
   m_configObjects:

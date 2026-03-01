@@ -61,7 +61,7 @@ public class Piece : MonoBehaviour
         Vector3 pivot = pivotCell.transform.position;
 
         float targetZ = transform.eulerAngles.z - 90f;
-
+        AudioManager.PlaySFXAt("Puzzle[A9]Rotation",transform.position);
         LeanTween.rotateAround(
             gameObject,
             Vector3.forward,
@@ -111,7 +111,7 @@ public class Piece : MonoBehaviour
         }
 
         // Nếu tới đây tức là tất cả hợp lệ
-
+        AudioManager.PlaySFXAt("Puzzle[A9]Snap",transform.position);
         transform.position += offset;
 
         for (int i = 0; i < cells.Count; i++)

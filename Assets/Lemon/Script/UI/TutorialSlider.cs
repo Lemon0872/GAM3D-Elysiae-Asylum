@@ -50,6 +50,7 @@ public class TutorialSlider : MonoBehaviour
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
         AudioManager.Instance.EnterUIFocus();
+        AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
     }
     void OnEnable()
     {
@@ -286,6 +287,7 @@ public class TutorialSlider : MonoBehaviour
     {
         AudioManager.Instance.EnterUIFocus();
         tutorialCanvasGroup.gameObject.SetActive(true);
+        AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
         LeanTween.alphaCanvas(tutorialCanvasGroup, 1, fadeDuration);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

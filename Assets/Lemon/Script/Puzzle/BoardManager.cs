@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BoardManager : MonoBehaviour
 {
     public static BoardManager Instance;
+    [SerializeField] private string id;
 
     [Header("Board Settings")]
     [Range(4, 6)]
@@ -179,12 +180,16 @@ public class BoardManager : MonoBehaviour
             }
         }
         Debug.Log("LEVEL COMPLETE");
+        AudioManager.PlaySFXAt("Puzzle[A9]Win",transform.position);
+        GameStateManager.Instance.MarkMiniGameCompleted(id);
     }
 
     IEnumerator CoolWin()
     {
         yield return new WaitForSeconds(2f);
         mask.SetActive(true);
+        yield return new WaitForSeconds(3.2f);
+        SceneFlowManager.Instance.Return();
     }
 #if UNITY_EDITOR
     void OnDrawGizmos()
