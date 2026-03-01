@@ -15302,7 +15302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &199014864 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7819979246067120329, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5451901109201282299, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
   m_PrefabInstance: {fileID: 1430586869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199694940
@@ -49557,7 +49557,7 @@ MonoBehaviour:
   objectToEnable: {fileID: 1342768552}
   playerTag: Player
   glassBreakClip: {fileID: 8300000, guid: e661f55b1e36c6b4f8c22532fb34f18e, type: 3}
-  glassVolume: 100
+  glassVolume: 30
 --- !u!1 &696309946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8603339840771121511, guid: 8d6939c3db4dac04683acac328818ad5, type: 3}

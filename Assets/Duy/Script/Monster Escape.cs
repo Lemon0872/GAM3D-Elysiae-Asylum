@@ -33,7 +33,7 @@ public class MonsterEscape : MonoBehaviour
 
         if (objectToDisable != null)
         {
-            soundPosition = objectToDisable.transform.position;
+            soundPosition = other.transform.position;
 
             objectToDisable.SetActive(false);
             Debug.Log("[TriggerZone] Disabled: " + objectToDisable.name);
