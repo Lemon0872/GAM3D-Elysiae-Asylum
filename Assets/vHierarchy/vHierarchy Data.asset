@@ -141,6 +141,14 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-906951182-0
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-6780656902665824334-1815724728
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-765832540-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-319272921-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-374527571-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-6888406094871016348-58283271
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-208408126-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1918847099-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1190473657-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2110983535-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2146800089-0
         values:
         - colorIndex: 2
           iconNameOrGuid: AvatarMask On Icon
@@ -176,6 +184,38 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 0
           iconNameOrGuid: Camera Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: ReflectionProbe Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
           isIconRecursive: 0
           isColorRecursive: 0
     - goDatas_byGlobalId:

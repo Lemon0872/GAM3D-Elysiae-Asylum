@@ -1,13 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WhaleChangeColor : MonoBehaviour, IInteractable
 {
     [SerializeField] private string interactText = "E to Change Color";
+
     [Header("Material Settings")]
     [SerializeField] private Material newMaterial;
+
     [Header("Puzzle State")]
-    public bool puzzleFinished = false;
+
+    [Header("Events")]
+    public UnityEvent OnWhaleColorChanged;
 
     private Renderer objectRenderer;
     private bool hasChanged = false;
@@ -33,10 +38,12 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
 
         objectRenderer.material = newMaterial;
 
-        puzzleFinished = true;
         hasChanged = true;
 
         Debug.Log("Whale color changed. Puzzle finished!");
+
+        // 🔥 Invoke event
+        OnWhaleColorChanged?.Invoke();
     }
 
     public Transform GetTransform()
@@ -50,5 +57,4 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
 
         ChangeMaterial();
     }
-
 }

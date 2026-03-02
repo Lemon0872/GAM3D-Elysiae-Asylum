@@ -10,6 +10,9 @@ TagManager:
   - ItemZ
   - PlateZ
   - Holder
+  - Dino1
+  - Dino2
+  - Dino3
   layers:
   - Default
   - TransparentFX
