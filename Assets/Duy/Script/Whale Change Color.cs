@@ -16,6 +16,8 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
 
     private Renderer objectRenderer;
     private bool hasChanged = false;
+    [SerializeField] private GameObject objectToEnable;
+    [SerializeField] private float enableDelay = 1f;
 
     private void Awake()
     {
@@ -32,7 +34,6 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
     {
         if (objectRenderer == null || newMaterial == null)
         {
-            Debug.LogWarning("Missing Renderer or Material!");
             return;
         }
 
@@ -40,10 +41,18 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
 
         hasChanged = true;
 
-        Debug.Log("Whale color changed. Puzzle finished!");
-
         // 🔥 Invoke event
         OnWhaleColorChanged?.Invoke();
+
+        if (objectToEnable != null)
+        {
+            Invoke(nameof(EnableObject), enableDelay);
+        }
+    }
+
+    private void EnableObject()
+    {
+        objectToEnable.SetActive(true);
     }
 
     public Transform GetTransform()
@@ -57,4 +66,5 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
 
         ChangeMaterial();
     }
+
 }

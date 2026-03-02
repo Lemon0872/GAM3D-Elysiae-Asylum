@@ -149,6 +149,9 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1190473657-0
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2110983535-0
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2146800089-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1226793032-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-264134656-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-3992058561654064293-1020424665
         values:
         - colorIndex: 2
           iconNameOrGuid: AvatarMask On Icon
@@ -218,6 +221,18 @@ MonoBehaviour:
           iconNameOrGuid: Favorite
           isIconRecursive: 0
           isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: MeshCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: SphereCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: ParticleSystem Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
     - goDatas_byGlobalId:
         keys:
         - globalObjectIdString: GlobalObjectId_V1-2-936d0702d3df2574ab019474325a29bc-1464449741-0
@@ -244,3 +259,4 @@ MonoBehaviour:
   bookmarks: []
   bookmarkedScenePaths:
   - Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Standard.unity
+  - Assets/Scenes/map_test.unity
