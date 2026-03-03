@@ -9,7 +9,8 @@ public class SceneFlowManager : MonoBehaviour
     //LoadFullScene() Load bth
     //Return() gọi khi muốn về main scene từ LoadMinigame()
     public static SceneFlowManager Instance;
-
+    private readonly Dictionary<int, Dictionary<GameObject, bool>> sceneStates
+        = new();
     [SerializeField] LoadingUI loadingUI;
 
     Stack<string> sceneStack = new();
@@ -87,7 +88,7 @@ public class SceneFlowManager : MonoBehaviour
         loadingUI.Show();
         sceneStack.Clear();
 
-        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         op.allowSceneActivation = false;
 
         while (op.progress < 0.9f)
@@ -112,19 +113,43 @@ public class SceneFlowManager : MonoBehaviour
         isTransitioning = false;
     }
     
-    void HideScene(Scene scene)
+    public void HideScene(Scene scene)
     {
+        if (!scene.isLoaded) return;
+
+        int handle = scene.handle;
+
+        if (sceneStates.ContainsKey(handle))
+            return; // đã lưu rồi, tránh overwrite
+
         var roots = scene.GetRootGameObjects();
+        var stateMap = new Dictionary<GameObject, bool>(roots.Length);
 
         foreach (var go in roots)
+        {
+            stateMap[go] = go.activeSelf;
             go.SetActive(false);
-    }
-    void ShowScene(Scene scene)
-    {
-        var roots = scene.GetRootGameObjects();
+        }
 
-        foreach (var go in roots)
-            go.SetActive(true);
+        sceneStates[handle] = stateMap;
+    }
+
+    public void ShowScene(Scene scene)
+    {
+        if (!scene.isLoaded) return;
+
+        int handle = scene.handle;
+
+        if (!sceneStates.TryGetValue(handle, out var stateMap))
+            return;
+
+        foreach (var kvp in stateMap)
+        {
+            if (kvp.Key != null)
+                kvp.Key.SetActive(kvp.Value);
+        }
+
+        sceneStates.Remove(handle);
     }
 
     #endregion
