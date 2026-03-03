@@ -50,6 +50,10 @@ public class TutorialSlider : MonoBehaviour
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
         AudioManager.Instance.EnterUIFocus();
+<<<<<<< HEAD
+=======
+        AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
+>>>>>>> parent of 08a93fc (setup)
     }
     void OnEnable()
     {

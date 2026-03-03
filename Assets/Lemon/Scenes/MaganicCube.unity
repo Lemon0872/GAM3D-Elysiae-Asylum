@@ -2087,10 +2087,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5862072171491647428, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: cubeSceneName
       value: M 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 08a93fc (setup)
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9855,7 +9858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: allMiniGames.Array.size
@@ -9890,14 +9893,35 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+>>>>>>> parent of 08a93fc (setup)
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+>>>>>>> parent of 08a93fc (setup)
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 165388814667561557}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 165388814667561557}
+    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+>>>>>>> parent of 08a93fc (setup)
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -9906,13 +9930,34 @@ PrefabInstance:
       value: gamestatetest
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: gamestatetest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+>>>>>>> parent of 08a93fc (setup)
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameStateManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+<<<<<<< HEAD
+      propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+=======
+      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameStateManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
+      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+>>>>>>> parent of 08a93fc (setup)
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
