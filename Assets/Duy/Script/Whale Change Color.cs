@@ -30,7 +30,7 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
         return interactText;
     }
 
-    private void ChangeMaterial()
+    public void ChangeMaterial()
     {
         if (objectRenderer == null || newMaterial == null)
         {
@@ -60,11 +60,33 @@ public class WhaleChangeColor : MonoBehaviour, IInteractable
         return transform;
     }
 
+    /*public void Interact(Transform interactorTransform)
+    {
+        if (hasChanged) return;
+        //ChangeMaterial();
+
+        whenInteract?.Invoke();
+    }*/
+
     public void Interact(Transform interactorTransform)
     {
         if (hasChanged) return;
 
+        if (!whaleClean) 
+        {
+            whenInteract?.Invoke();
+            return;
+        }
+
         ChangeMaterial();
+    }
+
+    [SerializeField] private UnityEvent whenInteract;
+    [SerializeField] private bool whaleClean = false;
+
+    public void SetWhaleCleanTrue()
+    {
+        whaleClean = true;
     }
 
 }

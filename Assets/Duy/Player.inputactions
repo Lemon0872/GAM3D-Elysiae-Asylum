@@ -93,6 +93,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "New action map",
+            "id": "21954755-c6e9-4eb7-909d-7426913abfa6",
+            "actions": [
+                {
+                    "name": "Stop",
+                    "type": "Button",
+                    "id": "266620fa-ad9b-4a57-8386-250b9c71aec9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7efc764f-7503-41a3-be41-e87c37956f9a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -58,6 +58,8 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1926701882-0
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-2048459511-0
         - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-1890580006-0
+        - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-308879717-0
+        - globalObjectIdString: GlobalObjectId_V1-2-cd99c80b415bece409ab9029ea36adf7-273715625-0
         values:
         - colorIndex: 0
           iconNameOrGuid: Camera Icon
@@ -129,6 +131,14 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 0
           iconNameOrGuid: StandaloneInputModule Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: Folder Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon
           isIconRecursive: 0
           isColorRecursive: 0
     - goDatas_byGlobalId:
@@ -329,6 +339,8 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1226793032-0
         - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-264134656-0
         - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-3992058561654064293-1020424665
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1649013042-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1936281710-0
         values:
         - colorIndex: 2
           iconNameOrGuid: AvatarMask On Icon
@@ -410,8 +422,17 @@ MonoBehaviour:
           iconNameOrGuid: ParticleSystem Icon
           isIconRecursive: 0
           isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Folder Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: Folder Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
   bookmarks: []
   bookmarkedScenePaths:
   - Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Standard.unity
   - Assets/Scenes/map_test.unity
   - Assets/Scenes/Map Bug.unity
+  - Assets/Scenes/Player Test.unity
