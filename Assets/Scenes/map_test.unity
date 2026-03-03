@@ -35264,7 +35264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5862072171491647428, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: cubeSceneName
-      value: M 2
+      value: N 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -101875,7 +101875,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
 --- !u!4 &1430586870 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7819979246067120329, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5451901109201282299, guid: d2562bfd2a207bf459046e4cac6e7bbf, type: 3}
   m_PrefabInstance: {fileID: 1430586869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430713627
@@ -128494,6 +128494,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32900000, guid: 7f32ab7c6c93a584c85a78d642dffbaa, type: 3}
     - target: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: onMouseLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: playerControllerToDisable
       value: 
       objectReference: {fileID: 125285194}
@@ -147110,7 +147114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[2].ID
-      value: M2
+      value: N1
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[3].ID
