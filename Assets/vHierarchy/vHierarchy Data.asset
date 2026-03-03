@@ -18,6 +18,7 @@ MonoBehaviour:
     - cd99c80b415bece409ab9029ea36adf7
     - 3041937a61dd8584d85e28ecdcb254e1
     - 936d0702d3df2574ab019474325a29bc
+    - e18a6bd85f819ef4aa17c7aa35005c92
     values:
     - goDatas_byGlobalId:
         keys:
@@ -254,6 +255,109 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 9
           iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-919132149155446097-1420035054
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1595823283-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-726987704-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-693483074-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1452002755-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-612529733-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-906951182-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-6780656902665824334-1815724728
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-765832540-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-319272921-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-374527571-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-6888406094871016348-58283271
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-208408126-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1918847099-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1190473657-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-2110983535-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-2146800089-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-1226793032-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-264134656-0
+        - globalObjectIdString: GlobalObjectId_V1-2-e18a6bd85f819ef4aa17c7aa35005c92-3992058561654064293-1020424665
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: AvatarMask On Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: MeshCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Folder Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Folder Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Terrain Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 4
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Camera Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: ReflectionProbe Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 2
+          iconNameOrGuid: 
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: MeshCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: SphereCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: ParticleSystem Icon
           isIconRecursive: 0
           isColorRecursive: 0
   bookmarks: []
