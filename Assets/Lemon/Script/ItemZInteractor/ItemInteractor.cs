@@ -84,7 +84,10 @@ public class ItemInteractor : MonoBehaviour,IInteractable
         // 1. Raycast từ tâm camera
         Ray ray = new Ray(origin, direction);
         RaycastHit hit;
-
+        // if (gameObject.CompareTag("khunglong"))
+        // {
+        //     transform
+        // }
         if (Physics.Raycast(ray, out hit, placeDistance))
         {
             // 2. Nếu trúng bề mặt → đặt tại điểm va chạm + offset
