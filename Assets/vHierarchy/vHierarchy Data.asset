@@ -173,6 +173,8 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-3992058561654064293-378158081
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-987982296-0
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2125698964-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1501124718-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2137037229-0
         values:
         - colorIndex: 2
           iconNameOrGuid: AvatarMask On Icon
@@ -292,6 +294,14 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 0
           iconNameOrGuid: cs Script Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 3
+          iconNameOrGuid: Folder Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Font Icon
           isIconRecursive: 0
           isColorRecursive: 0
     - goDatas_byGlobalId:

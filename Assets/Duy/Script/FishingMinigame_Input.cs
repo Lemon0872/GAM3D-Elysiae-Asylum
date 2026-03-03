@@ -191,6 +191,7 @@ public class FishingMinigame_Input : MonoBehaviour
     public void Retry()
     {
         retryCount++;
+        speed += 1f;
 
         if (retryCount >= 3)
         {
