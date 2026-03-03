@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerDeath : MonoBehaviour
@@ -62,6 +63,15 @@ public class PlayerDeath : MonoBehaviour
         EnableRagdoll();
         PlayDeathSound();
         FindFirstObjectByType<MonsterAI>()?.OnPlayerDied();
+
+        Invoke(nameof(LoadGameOver), 5f);
+    }
+
+    void LoadGameOver()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("GameOver");
     }
 
     void CheckMonsterDistance()
