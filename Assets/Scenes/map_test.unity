@@ -34788,7 +34788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5862072171491647428, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: cubeSceneName
-      value: M 2
+      value: N 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52084,7 +52084,7 @@ Transform:
   m_GameObject: {fileID: 726987704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.50505, y: -37.17217, z: 58.80436}
+  m_LocalPosition: {x: 12.60882, y: -43.68742, z: 21.207079}
   m_LocalScale: {x: 1.1485, y: 1.1485, z: 1.1485}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -55623,7 +55623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1c8813c613947544aea39a66aa259ce, type: 3}
       propertyPath: m_TagString
@@ -97877,15 +97877,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.40405
+      value: 12.70982
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -41.41417
+      value: -47.92942
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.60236
+      value: 21.00508
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3743de9cfb97c23478b2184775a88beb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -109862,7 +109862,7 @@ Transform:
   m_GameObject: {fileID: 1595823283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.50505, y: -37.17217, z: 58.80436}
+  m_LocalPosition: {x: 12.60882, y: -43.68742, z: 21.207079}
   m_LocalScale: {x: 0.57425, y: 0.57425, z: 0.57425}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -125411,6 +125411,10 @@ PrefabInstance:
       propertyPath: m_VideoClip
       value: 
       objectReference: {fileID: 32900000, guid: 7f32ab7c6c93a584c85a78d642dffbaa, type: 3}
+    - target: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: onMouseLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: playerControllerToDisable
       value: 
@@ -143854,7 +143858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[2].ID
-      value: M2
+      value: N1
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[3].ID

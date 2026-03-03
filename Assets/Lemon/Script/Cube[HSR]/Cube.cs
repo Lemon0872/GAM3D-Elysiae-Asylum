@@ -30,7 +30,6 @@ public class HexanexusController : MonoBehaviour
         pivot = new GameObject("Pivot").transform;
         pivot.SetParent(transform);
         pivot.localPosition = Vector3.zero;
-        AudioManager.PlayMusic("Cube[HSR]Theme");
     }
 
     void Update()

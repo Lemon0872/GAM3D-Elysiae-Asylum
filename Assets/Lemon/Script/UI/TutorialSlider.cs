@@ -14,6 +14,7 @@ public class TutorialSlider : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.2f;
     [SerializeField] private KeyCode nextKey = KeyCode.E;
     [SerializeField] private KeyCode prevKey = KeyCode.Q;
+    [SerializeField] private bool onMouseLocked;
 
     [Header("Navigation Buttons")]
     [SerializeField] private Button nextButton;
@@ -51,6 +52,8 @@ public class TutorialSlider : MonoBehaviour
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
         AudioManager.Instance.EnterUIFocus();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
         if (playerControllerToDisable != null)
             playerControllerToDisable.enabled = false;
@@ -304,9 +307,13 @@ public class TutorialSlider : MonoBehaviour
         LeanTween.alphaCanvas(tutorialCanvasGroup, 0, fadeDuration)
                  .setOnComplete(() =>
                  {
+                    FadeTo(0);
+                     if (onMouseLocked)
+                     {
+                        Cursor.lockState = CursorLockMode.Locked;
+                        Cursor.visible = false;
+                     }
                      tutorialCanvasGroup.gameObject.SetActive(false);
-                     Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
                     if (playerControllerToDisable != null)
                         playerControllerToDisable.enabled = true;
                  });

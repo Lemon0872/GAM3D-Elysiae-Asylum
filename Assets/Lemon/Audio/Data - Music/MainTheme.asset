@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dac8723f650ba44595946cef64f969b, type: 3}
   m_Name: MainTheme
   m_EditorClassIdentifier: Assembly-CSharp::MusicData
-  clip: {fileID: 8300000, guid: c3535b374dd8a4d4a88f69aaecb630f0, type: 3}
+  clip: {fileID: 8300000, guid: 58afadc8efa4ad440822dcf7d1d6155d, type: 3}
   mixer: {fileID: 8389423226191200243, guid: 1b5ad01339f0f9d46ab64346dc522cd4, type: 2}
   volume: 1
   fadeIn: 1
