@@ -153,6 +153,16 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1226793032-0
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-264134656-0
         - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-3992058561654064293-1020424665
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-635001658-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1046669027-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-303919716-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-831923484-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-340812191-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1161515994-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-1457891573-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-3992058561654064293-378158081
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-987982296-0
+        - globalObjectIdString: GlobalObjectId_V1-2-3041937a61dd8584d85e28ecdcb254e1-2125698964-0
         values:
         - colorIndex: 2
           iconNameOrGuid: AvatarMask On Icon
@@ -232,6 +242,46 @@ MonoBehaviour:
           isColorRecursive: 0
         - colorIndex: 0
           iconNameOrGuid: ParticleSystem Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: Favorite
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: SphereCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: MeshCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: MeshCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: ParticleSystem Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: SphereCollider Icon
+          isIconRecursive: 0
+          isColorRecursive: 0
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon
           isIconRecursive: 0
           isColorRecursive: 0
     - goDatas_byGlobalId:
@@ -364,3 +414,4 @@ MonoBehaviour:
   bookmarkedScenePaths:
   - Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Standard.unity
   - Assets/Scenes/map_test.unity
+  - Assets/Scenes/Map Bug.unity
