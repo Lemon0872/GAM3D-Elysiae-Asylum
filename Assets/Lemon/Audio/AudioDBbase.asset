@@ -20,9 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 503ce5958c1fd0b4cbd267f32783e213, type: 2}
   - {fileID: 11400000, guid: d8628f9dc6a72bf41a5b907dfce5b082, type: 2}
   - {fileID: 11400000, guid: e18f57635f1766a4bb533811523d1824, type: 2}
-  - {fileID: 11400000, guid: d39315c02fa41cd40888f4bf523c8c10, type: 2}
-  - {fileID: 11400000, guid: 428706be3298f564a964433b566217a3, type: 2}
-  - {fileID: 11400000, guid: 96e4fc81509765544a547ec1a57df145, type: 2}
   musicList:
   - {fileID: 11400000, guid: 7594923d1292bbf4b8a58a99a5682f8d, type: 2}
   - {fileID: 11400000, guid: 63440d3bd8e5b2144b6c119ee93951cf, type: 2}

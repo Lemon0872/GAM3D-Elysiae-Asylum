@@ -22,7 +22,6 @@ public class CubeGate : MonoBehaviour,IInteractable
     public void Interact(Transform interactorTransform)
     {
         SceneFlowManager.Instance.LoadMinigame(cubeSceneName);
-        Debug.Log($"da load scene: {cubeSceneName}");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

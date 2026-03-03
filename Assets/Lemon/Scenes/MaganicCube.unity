@@ -419,17 +419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21557559}
   m_CullTransparentMesh: 1
---- !u!114 &24659037 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5862072171491647428, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
-  m_PrefabInstance: {fileID: 304979612}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 524edd53797b91d4db17c063a3446243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!4 &27215901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3865970971184021464, guid: a19a169ab27615b4e9e56e2f9e54c004, type: 3}
@@ -2100,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5862072171491647428, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: cubeSceneName
-      value: A 1
+      value: M 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8191,11 +8180,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842159658}
   m_CullTransparentMesh: 1
---- !u!4 &1855250038 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4466146308516996692, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
-  m_PrefabInstance: {fileID: 304979612}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1903409851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3865970971184021464, guid: a19a169ab27615b4e9e56e2f9e54c004, type: 3}
@@ -9899,38 +9883,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[1].ID
-      value: A0
+      value: M1
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 165388814667561557}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 24659037}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
@@ -9938,28 +9906,12 @@ PrefabInstance:
       value: gamestatetest
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Interact
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameStateManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CubeGate, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1855250038}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[0].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
-      propertyPath: miniGames.Array.data[1].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10749,10 +10701,10 @@ SceneRoots:
   - {fileID: 8083958631808487609}
   - {fileID: 83276399}
   - {fileID: 2120278157}
+  - {fileID: 6629181218849313714}
   - {fileID: 5275356557146296308}
   - {fileID: 371887609531523610}
   - {fileID: 1037153174}
-  - {fileID: 6629181218849313714}
   - {fileID: 304979612}
   - {fileID: 1364777289}
   - {fileID: 561425532}

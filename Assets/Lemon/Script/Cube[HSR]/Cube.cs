@@ -17,8 +17,6 @@ public class HexanexusController : MonoBehaviour
     private Transform pivot;
 
     public string sceneName;
-
-    [SerializeField] private GameObject mask;
     void Awake()
     {
         foreach (Transform t in CubicPar) cubes.Add(t);
@@ -284,18 +282,12 @@ public class HexanexusController : MonoBehaviour
         {
             Debug.Log("wincubeHSR");
             Time.timeScale=1;
-            foreach (Transform child in cubes)
-            {
-                child.GetComponent<Outline>().enabled = false;
-            }
             StartCoroutine(Return());
         }
     }
     IEnumerator Return()
     {
-        yield return new WaitForSeconds(1.2f);
-        mask.SetActive(true);
-        yield return new WaitForSeconds(3.3f);
+        yield return new WaitForSeconds(3.5f);
         SceneFlowManager.Instance.Return();
     }
 }
