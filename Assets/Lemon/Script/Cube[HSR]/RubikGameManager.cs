@@ -56,7 +56,7 @@ public class RubikChecker : MonoBehaviour
                 else block.GetComponent<CubeGlow>().SetGlow(false);
             }
 
-            if (!CheckGoalACompleted() || !CheckGoalBCompleted())
+            if (!aMatch || !bMatch)
             {
                 Debug.Log("chua win");
                 return false;

@@ -26,9 +26,8 @@ public class TutorialSlider : MonoBehaviour
 
     [SerializeField] private Color activeColor = Color.white;
     [SerializeField] private Color inactiveColor = new Color(1,1,1,0.3f);
-    [SerializeField] private float activeScale = 1.3f;
 
-    public MonoBehaviour playerControllerToDisable;
+    [SerializeField] private float activeScale = 1.3f;
 
     private List<Image> dots = new List<Image>();
     private List<CanvasGroup> pages = new();
@@ -52,8 +51,6 @@ public class TutorialSlider : MonoBehaviour
         previousButton.onClick.AddListener(PreviousPage);
         AudioManager.Instance.EnterUIFocus();
         AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
-        if (playerControllerToDisable != null)
-            playerControllerToDisable.enabled = false;
     }
     void OnEnable()
     {
@@ -294,8 +291,6 @@ public class TutorialSlider : MonoBehaviour
         LeanTween.alphaCanvas(tutorialCanvasGroup, 1, fadeDuration);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        if (playerControllerToDisable != null)
-            playerControllerToDisable.enabled = false;
     }
 
     public void HideTutorial()
@@ -307,8 +302,6 @@ public class TutorialSlider : MonoBehaviour
                      tutorialCanvasGroup.gameObject.SetActive(false);
                      Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
-                    if (playerControllerToDisable != null)
-                        playerControllerToDisable.enabled = true;
                  });
     }
 }

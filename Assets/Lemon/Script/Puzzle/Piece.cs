@@ -79,15 +79,14 @@ public class Piece : MonoBehaviour
 
     void TrySnap()
     {
-        
         BoardSlot pivotSlot =
             BoardManager.Instance.GetClosestSlot(
                 pivotCell.transform.position
             );
-        
+
         if (pivotSlot == null)
             return;
-        Debug.Log("Trying snap");
+
         Vector3 offset =
             pivotSlot.transform.position -
             pivotCell.transform.position;
