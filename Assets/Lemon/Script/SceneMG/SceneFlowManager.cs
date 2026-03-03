@@ -181,8 +181,12 @@ public class SceneFlowManager : MonoBehaviour
             yield return null;
 
         if (sceneStack.Count == 0)
+        {
             GameStateManager.Instance.SetState(GameState.Gameplay);
-
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+            
         loadingUI.Hide();
         isTransitioning = false;
     }

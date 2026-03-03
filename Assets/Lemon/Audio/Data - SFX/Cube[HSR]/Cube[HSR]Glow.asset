@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundData
   clip: {fileID: 8300000, guid: a7e0027c29941354f9a82dc8cd8a2ee1, type: 3}
   mixer: {fileID: -9052068345216529293, guid: 1b5ad01339f0f9d46ab64346dc522cd4, type: 2}
-  volume: 1
+  volume: 0.6
   pitchRange: {x: 1, y: 1}
   is3D: 0
   minDistance: 1

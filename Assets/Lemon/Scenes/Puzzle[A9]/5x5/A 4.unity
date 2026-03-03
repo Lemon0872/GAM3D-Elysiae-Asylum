@@ -574,7 +574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -76.46001, y: -81.999985}
+  m_AnchoredPosition: {x: -76.46002, y: -82}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207925942
@@ -622,16 +622,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 401529169}
-        m_TargetAssemblyTypeName: TutorialSlider, Assembly-CSharp
-        m_MethodName: ShowTutorial
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &207925943
 MonoBehaviour:
@@ -826,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 1297829582883392152, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 8587986d8fac4d64f8777bccf36cfa13, type: 3}
+      objectReference: {fileID: 32900000, guid: 5a5d1848097e8704b804c94c9b7b67a0, type: 3}
     - target: {fileID: 1741243340602566788, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -919,7 +919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136731872166257271, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5867069724908041032, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Name
@@ -932,7 +932,7 @@ PrefabInstance:
     - target: {fileID: 6593683645901707910, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: b98926c2259aacc4ba4cb35f12dcb806, type: 3}
+      objectReference: {fileID: 32900000, guid: ad48d8262bc27c74c877d7dfff9d9a77, type: 3}
     - target: {fileID: 8359166746511377138, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_text
       value: "Click & k\xE9o th\u1EA3 c\xE1c m\u1EA3nh gh\xE9p v\xE0o b\u1EA3ng,
@@ -951,17 +951,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1741243340602566788, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
   m_PrefabInstance: {fileID: 401529167}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &401529169 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+--- !u!1 &401529169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5867069724908041032, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
   m_PrefabInstance: {fileID: 401529167}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db437ffec7686c4892c9c037ad939f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialSlider
 --- !u!1 &454880393
 GameObject:
   m_ObjectHideFlags: 0
