@@ -1511,6 +1511,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1551971827}
     m_Modifications:
+    - target: {fileID: 1297829582883392152, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 0ae7110feef8c7442ac0236b9d44b47b, type: 3}
     - target: {fileID: 1741243340602566788, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1603,6 +1607,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6325659815576933565, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 3424196196a59844bae4d83da99f5b31, type: 3}
+    - target: {fileID: 6593683645901707910, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 88845624de9d3524796d3878799f4983, type: 3}
     - target: {fileID: 7416859158476793296, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Transition
       value: 2

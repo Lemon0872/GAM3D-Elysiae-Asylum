@@ -826,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 1297829582883392152, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 8587986d8fac4d64f8777bccf36cfa13, type: 3}
+      objectReference: {fileID: 32900000, guid: 5a5d1848097e8704b804c94c9b7b67a0, type: 3}
     - target: {fileID: 1741243340602566788, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -919,7 +919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136731872166257271, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5867069724908041032, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Name
@@ -932,7 +932,7 @@ PrefabInstance:
     - target: {fileID: 6593683645901707910, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: b98926c2259aacc4ba4cb35f12dcb806, type: 3}
+      objectReference: {fileID: 32900000, guid: ad48d8262bc27c74c877d7dfff9d9a77, type: 3}
     - target: {fileID: 8359166746511377138, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_text
       value: "Click & k\xE9o th\u1EA3 c\xE1c m\u1EA3nh gh\xE9p v\xE0o b\u1EA3ng,

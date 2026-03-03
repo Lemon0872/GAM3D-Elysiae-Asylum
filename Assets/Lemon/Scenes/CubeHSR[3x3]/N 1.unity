@@ -1402,9 +1402,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1180780552}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_TargetAssemblyTypeName: TutorialSlider, Assembly-CSharp
+        m_MethodName: ShowTutorial
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2349,13 +2349,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034837022}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06146057, y: 0.90904593, z: -0.14479199, w: 0.38586718}
+  m_LocalRotation: {x: 0.060194682, y: 0.9123786, z: -0.14532283, w: 0.37791958}
   m_LocalPosition: {x: -5.69, y: 3.79, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 18.1, y: 134, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.1, y: 135, z: 0}
 --- !u!114 &1034837026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,6 +2945,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1695973098}
     m_Modifications:
+    - target: {fileID: 1297829582883392152, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 0ae7110feef8c7442ac0236b9d44b47b, type: 3}
     - target: {fileID: 1741243340602566788, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3025,6 +3029,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3917195061657492332, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4259545090313798970, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3035,8 +3043,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867069724908041032, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6325659815576933565, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 3424196196a59844bae4d83da99f5b31, type: 3}
+    - target: {fileID: 6593683645901707910, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 88845624de9d3524796d3878799f4983, type: 3}
     - target: {fileID: 7416859158476793296, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
       propertyPath: m_Transition
       value: 2
@@ -3049,6 +3065,10 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: -1960875926, guid: 1aa749f2b82d1df458a21b476074dee6, type: 3}
+    - target: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+      propertyPath: isFirstRound
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3059,11 +3079,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1741243340602566788, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
   m_PrefabInstance: {fileID: 1180780550}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1180780552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5867069724908041032, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
+--- !u!114 &1180780552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8204044427606584944, guid: 8811910aea145fb4197f8abafb00aea1, type: 3}
   m_PrefabInstance: {fileID: 1180780550}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db437ffec7686c4892c9c037ad939f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialSlider
 --- !u!4 &1193646711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2269682346526916764, guid: fc7174f2b5a09e747a442449ba53e9d8, type: 3}

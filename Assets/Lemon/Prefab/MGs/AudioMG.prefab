@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   database: {fileID: 11400000, guid: 9b94980dfb28c334eb500d06a0058369, type: 2}
-  normalSnapshot: {fileID: 0}
-  uiFocusSnapshot: {fileID: 0}
+  normalSnapshot: {fileID: 24500006, guid: 1b5ad01339f0f9d46ab64346dc522cd4, type: 2}
+  uiFocusSnapshot: {fileID: -6669149459584589207, guid: 1b5ad01339f0f9d46ab64346dc522cd4, type: 2}
   transitionTime: 0.5

@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [Header("Snapshots")]
     public AudioMixerSnapshot normalSnapshot;
     public AudioMixerSnapshot uiFocusSnapshot;
+    public HashSet<Button> installedButtons = new HashSet<Button>();
 
     [Header("Settings")]
     public float transitionTime = 0.5f;
@@ -34,6 +38,35 @@ public class AudioManager : MonoBehaviour
         pool = new AudioSourcePool(transform);
         sfx = new SFXChannel(database, pool);
         music = new MusicChannel(database, transform, this);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InstallAllButtons();
+    }
+
+    void InstallAllButtons()
+    {
+        var buttons = FindObjectsOfType<Button>(true);
+
+        foreach (var btn in buttons)
+        {
+            if (installedButtons.Contains(btn))
+                continue;
+
+            btn.onClick.AddListener(() =>
+            {
+                PlayClickSound();
+            });
+
+            installedButtons.Add(btn);
+        }
+    }
+
+    void PlayClickSound()
+    {
+        PlaySFXAt("UI[Button]Click",transform.position);
     }
 
     public static void PlaySFXAt(string id, Vector3 emitter)

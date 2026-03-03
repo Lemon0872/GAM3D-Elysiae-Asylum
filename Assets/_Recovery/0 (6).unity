@@ -110936,7 +110936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1570265645
 Transform:
   m_ObjectHideFlags: 0
@@ -118639,7 +118639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: f2f2e3bc73998af4e86172b85d2ce13d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.82
+      value: -12.605792
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: f2f2e3bc73998af4e86172b85d2ce13d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -118647,7 +118647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: f2f2e3bc73998af4e86172b85d2ce13d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.81
+      value: 28.267242
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: f2f2e3bc73998af4e86172b85d2ce13d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -146202,7 +146202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.364208
+      value: -21.15
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -146210,7 +146210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.81
+      value: 28.267242
       objectReference: {fileID: 0}
     - target: {fileID: 4466146308516996692, guid: e6033cc5d888b3b4e9457653e0cf130c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -147478,7 +147478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[4].OnCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: set_isStatic
       objectReference: {fileID: 0}
     - target: {fileID: 6127087862625673853, guid: df721840e6ccde0499ad72d1950c0d4f, type: 3}
       propertyPath: miniGames.Array.data[4].OnCompleted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName

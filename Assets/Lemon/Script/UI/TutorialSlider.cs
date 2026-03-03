@@ -15,6 +15,8 @@ public class TutorialSlider : MonoBehaviour
     [SerializeField] private KeyCode nextKey = KeyCode.E;
     [SerializeField] private KeyCode prevKey = KeyCode.Q;
     [SerializeField] private bool onMouseLocked;
+    [SerializeField] private bool isFirstRound =true;
+
 
     [Header("Navigation Buttons")]
     [SerializeField] private Button nextButton;
@@ -51,12 +53,16 @@ public class TutorialSlider : MonoBehaviour
     {
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
-        AudioManager.Instance.EnterUIFocus();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
-        if (playerControllerToDisable != null)
-            playerControllerToDisable.enabled = false;
+        if (isFirstRound)
+        {
+            AudioManager.Instance.EnterUIFocus();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
+            if (playerControllerToDisable != null)
+                playerControllerToDisable.enabled = false;
+        }
+        
     }
     void OnEnable()
     {
@@ -292,6 +298,7 @@ public class TutorialSlider : MonoBehaviour
     public void ShowTutorial()
     {
         AudioManager.Instance.EnterUIFocus();
+        AudioManager.PlaySFXAt("UI[Button]Click",transform.position);
         tutorialCanvasGroup.gameObject.SetActive(true);
         AudioManager.PlaySFXAt("UI[Tutorial]Open",transform.position);
         LeanTween.alphaCanvas(tutorialCanvasGroup, 1, fadeDuration);
@@ -304,6 +311,7 @@ public class TutorialSlider : MonoBehaviour
     public void HideTutorial()
     {
         AudioManager.Instance.ExitUIFocus();
+        AudioManager.PlaySFXAt("UI[Button]Click",transform.position);
         LeanTween.alphaCanvas(tutorialCanvasGroup, 0, fadeDuration)
                  .setOnComplete(() =>
                  {
