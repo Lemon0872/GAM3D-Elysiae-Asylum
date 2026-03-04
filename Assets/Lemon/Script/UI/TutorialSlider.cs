@@ -40,6 +40,7 @@ public class TutorialSlider : MonoBehaviour
     private RenderTexture sharedRT;
     private int currentIndex = 0;
     private bool isTransitioning = false;
+    private bool isActive=false;
 
     void Awake()
     {
@@ -55,6 +56,7 @@ public class TutorialSlider : MonoBehaviour
         previousButton.onClick.AddListener(PreviousPage);
         if (isFirstRound)
         {
+            isActive=true;
             AudioManager.Instance.EnterUIFocus();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -73,12 +75,18 @@ public class TutorialSlider : MonoBehaviour
     void Update()
     {
         if (isTransitioning) return;
-
+        
         if (Input.GetKeyDown(nextKey))
-            Next();
+        {
+            if(isActive) Next();
+        }
+           
 
         if (Input.GetKeyDown(prevKey))
-            Previous();
+        {
+            if(isActive) Previous();
+        }
+            
     }
 
     // ===============================
@@ -297,6 +305,7 @@ public class TutorialSlider : MonoBehaviour
     // ===============================
     public void ShowTutorial()
     {
+        isActive=true;
         AudioManager.Instance.EnterUIFocus();
         AudioManager.PlaySFXAt("UI[Button]Click",transform.position);
         tutorialCanvasGroup.gameObject.SetActive(true);
@@ -310,6 +319,7 @@ public class TutorialSlider : MonoBehaviour
 
     public void HideTutorial()
     {
+        isActive=false;
         AudioManager.Instance.ExitUIFocus();
         AudioManager.PlaySFXAt("UI[Button]Click",transform.position);
         LeanTween.alphaCanvas(tutorialCanvasGroup, 0, fadeDuration)
