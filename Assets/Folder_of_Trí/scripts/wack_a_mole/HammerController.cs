@@ -24,7 +24,7 @@ public class HammerController : MonoBehaviour
     {
         var actionMap = inputActions.FindActionMap("HammerControl", throwIfNotFound: true);
         wackAction = actionMap.FindAction("Wack", throwIfNotFound: true);
-
+        Debug.Log("hamberrrr");
         wackAction.performed += ctx => OnWack();
     }
 

@@ -43,6 +43,7 @@ public class AudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if(scene.name=="Menu") PlayMusic("MenuTheme");
         InstallAllButtons();
     }
 

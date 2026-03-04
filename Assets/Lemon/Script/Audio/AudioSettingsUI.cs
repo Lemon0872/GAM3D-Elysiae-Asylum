@@ -28,6 +28,7 @@ public class AudioSettingsUI : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] Animator animator;
+    public bool isMouseLock;
 
     const string MASTER_VOL = "Master";
     const string MUSIC_VOL  = "Music";
@@ -61,9 +62,12 @@ public class AudioSettingsUI : MonoBehaviour
             else
             {
                 animator.SetBool("IsClose",true);
+                if (isMouseLock)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
                 
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
                 Time.timeScale = 1f;
             }
         }
