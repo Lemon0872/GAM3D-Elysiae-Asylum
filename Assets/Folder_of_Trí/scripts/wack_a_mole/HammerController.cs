@@ -20,24 +20,6 @@ public class HammerController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI messageText;     
 
-    void Awake()
-    {
-        var actionMap = inputActions.FindActionMap("HammerControl", throwIfNotFound: true);
-        wackAction = actionMap.FindAction("Wack", throwIfNotFound: true);
-        Debug.Log("hamberrrr");
-        wackAction.performed += ctx => OnWack();
-    }
-
-    void OnEnable()
-    {
-        wackAction.Enable();
-    }
-
-    void OnDisable()
-    {
-        wackAction.Disable();
-    }
-
     void Start()
     {
         originalRotation = transform.localRotation;
