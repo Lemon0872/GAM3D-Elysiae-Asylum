@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>16/04/2026 - 00:44:25</Generatedon>
+    <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
+    <Assemblies>2</Assemblies>
+    <Classes>16</Classes>
+    <Files>16</Files>
+    <Coveredlines>923</Coveredlines>
+    <Uncoveredlines>103</Uncoveredlines>
+    <Coverablelines>1026</Coverablelines>
+    <Totallines>2277</Totallines>
+    <Linecoverage>89.9</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>115</Coveredmethods>
+    <Totalmethods>121</Totalmethods>
+    <Methodcoverage>95</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="EditMode" classes="6" coverage="92" coveredlines="138" coverablelines="150" totallines="365" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="19" totalmethods="19" methodcoverage="100">
+      <Class name="Player_Move" coverage="98.2" coveredlines="57" coverablelines="58" totallines="141" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="9" methodcoverage="100" />
+      <Class name="UT_Penguin" coverage="91.1" coveredlines="41" coverablelines="45" totallines="112" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="6" methodcoverage="100" />
+      <Class name="UT_TRubik_5" coverage="88.8" coveredlines="8" coverablelines="9" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="UT_TRubik_6" coverage="57.1" coveredlines="4" coverablelines="7" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="UT_TRubik_7" coverage="90" coveredlines="18" coverablelines="20" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="UT_TRubik_72" coverage="90.9" coveredlines="10" coverablelines="11" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="PlayMode" classes="10" coverage="89.6" coveredlines="785" coverablelines="876" totallines="1912" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="96" totalmethods="102" methodcoverage="94.1">
+      <Class name="IntegrationTestsSuite" coverage="94.9" coveredlines="94" coverablelines="99" totallines="223" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="17" totalmethods="17" methodcoverage="100" />
+      <Class name="MonsterAI_Test" coverage="85.1" coveredlines="23" coverablelines="27" totallines="70" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="3" methodcoverage="33.3" />
+      <Class name="UT_Animation_Effect" coverage="98.3" coveredlines="122" coverablelines="124" totallines="289" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="18" totalmethods="18" methodcoverage="100" />
+      <Class name="UT_CUBIC" coverage="88.9" coveredlines="113" coverablelines="127" totallines="279" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="15" totalmethods="15" methodcoverage="100" />
+      <Class name="UT_EPuzzle" coverage="87.7" coveredlines="93" coverablelines="106" totallines="216" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="12" totalmethods="12" methodcoverage="100" />
+      <Class name="UT_ITEM_03" coverage="47.2" coveredlines="26" coverablelines="55" totallines="109" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="5" methodcoverage="60" />
+      <Class name="UT_ITEM_04_05" coverage="100" coveredlines="79" coverablelines="79" totallines="180" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="8" methodcoverage="100" />
+      <Class name="UT_ITEM_09" coverage="92.5" coveredlines="25" coverablelines="27" totallines="71" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
+      <Class name="UT_RAPTOR_MINIGAME" coverage="85.7" coveredlines="108" coverablelines="126" totallines="252" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="8" methodcoverage="100" />
+      <Class name="UT_UI" coverage="96.2" coveredlines="102" coverablelines="106" totallines="223" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="11" methodcoverage="81.8" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
